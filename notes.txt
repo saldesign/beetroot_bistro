@@ -15,3 +15,72 @@ Local Food • Beer • Wine • Mezcal/Tequila • Whiskey • Kombucha • Mus
 Casa Calgari Cafe(Gimicky but Interesting/novel):	Quirky Cafe, décor and ambiance, chilaquiles, juices and hot drinks.
 
 
+Site Requirements
+	Menu updates 	- Menu changes as well as featured items including descriptions, photos, 
+						  and the possibility of being featured on the home page
+	Reservations	- Date, Time, # of people
+	Event booking 	- Music/Art/Speaker venu
+						- Private Parties - corporate, family, friends, groups
+	Catering?		- Location, Date, Time, # of People, Packages? 
+	Blog 				- Owners, Chefs, Employees can post restaurant updates, health tips, 
+						  recipies, etc..
+
+
+
+
+Site Map
+
+	Home
+		Intro - About restaurant
+		Featured - Blog Post, Event Post, Featured Menu Post
+	About 
+		Restaurant
+		Creators
+		Chefs
+	Menu
+		Lunch
+		Dinner
+	Events
+		About Events
+		Hosting your event
+		Feed of Posts
+		Calendar Widget
+	Blog
+		Feed of Posts
+		Popular Posts
+		Post Categories
+		Archive by Date
+	Reservations
+		Book a table
+			# of guests
+			Time and Date
+		Book an Event
+			# of guests
+			Time and Date
+	Contact
+		Basic contact form 
+		Map
+		Affiliate companies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
