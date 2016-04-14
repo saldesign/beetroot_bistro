@@ -25,39 +25,55 @@ Site Requirements
 	Blog 				- Owners, Chefs, Employees can post restaurant updates, health tips, 
 						  recipies, etc..
 
+Beet Root Research
 
 
 
 Site Map
 
-	Home
+	Home(Front Template)
 		Intro - About restaurant
-		Featured - Blog Post, Event Post, Featured Menu Post
-	About 
+		Quick Links To main Pages
+		Reservation - Footer Plugin?
+		Featured - Blog Post, Event Post, Menu Post
+		Specials/Happy Hour Sidebar
+	About(Page Template)
 		Restaurant
 		Creators
 		Chefs
-	Menu
+	Menu(Page Template)
 		Lunch
 		Dinner
-	Events
+	*Events(Page Template)
 		About Events
 		Hosting your event
 		Feed of Posts
 		Calendar Widget
-	Blog
+	Blog(Feed Template)
 		Feed of Posts
 		Popular Posts
 		Post Categories
 		Archive by Date
-	Reservations
+
+		Post Information
+			Title
+			Date
+			Description
+			Category
+			Author
+			Comments
+			Read More
+
+	Single Post(Single Template)
+
+	Reservations(Page Template)
 		Book a table
 			# of guests
 			Time and Date
 		Book an Event
 			# of guests
 			Time and Date
-	Contact
+	Contact(Page Template )
 		Basic contact form 
 		Map
 		Affiliate companies
