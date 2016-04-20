@@ -80,6 +80,37 @@ Site Map
 
 
 
+
+
+
+
+Components
+
+	Navigation Menu
+	Featured Image - Intro banner
+	Quicklinks Menu
+	Bookings Plugin
+	Menu Update Feed
+	Specials Feed
+	Recent Blog Posts
+	Footer Widget Area
+
+	Blog Post in Feed/Blog
+	Sidebar
+	
+	Single Blog Post
+	Discussion Feed - Comment form
+	
+	Featured image + Intro section
+
+
+			
+
+
+
+
+
+
 wp db
 pass
 #CSva2y1XX4N(dU3*q

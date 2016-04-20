@@ -20,13 +20,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'christian_wp');
+define('DB_NAME', 'beetroot');
 
 /** MySQL database username */
-define('DB_USER', 'christian_wp');
+define('DB_USER', 'christian');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'FEtLvMHHP2r8Ffyd');
+define('DB_PASSWORD', 'RzqYUDfUMGfERrzC');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
