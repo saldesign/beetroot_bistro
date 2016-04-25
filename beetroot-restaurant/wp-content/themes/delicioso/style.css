@@ -37,3 +37,64 @@ Tags:green, two-columns
 ==Templates
 ==Media Queries
 */
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Hind:700,600,500,400,300);
+
+
+/*
+==Clear Fix
+*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+
+/*
+==Basic Links
+*/
+body{
+/* Remove For Customization */	
+	background-color:#fff;
+	color: #000;
+
+	font-family: 'Hind', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-weight: '500';
+	font-size: 100%;
+	line-height: 1.125rem;
+}
+a{
+	color:#42a685;
+	-webkit-transition: all 300ms ease-out;
+	-moz-transition: all 300ms ease-out;
+	-ms-transition: all 300ms ease-out;
+	-o-transition: all 300ms ease-out;
+	transition: all 300ms ease-out;
+}
+a:hover,
+a:focus {
+	color: #e6b217;
+}
+
+/*
+==Layout blocks
+*/
+
+
+
+
+/*
+==Navigation Top Bar
+*/
+
+
+
+
+
