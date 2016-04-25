@@ -79,6 +79,11 @@ $table_prefix  = 'projector_';
  */
 define('WP_DEBUG', false);
 
+/**
+ * Mac
+ */
+define('FS_METHOD', 'direct');
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
