@@ -73,6 +73,9 @@ add_action('wp_enqueue_scripts', 'delicioso_comment_ux' );
 		register_nav_menus( array(
 				'main_menu' => 'Main Menu'
 			));
+		register_nav_menus( array(
+				'image_menu' => 'Image Menu'
+			));
 	}
 	function delicioso_menu_fallback(){
 		echo 'Go into the admin panel and assign a menu to Main Menu!';
@@ -109,7 +112,40 @@ function delicioso_pagination(){
 
 //TO DO: Widget Areas (dynamic sidebars)
 
-
+/**
+ * Create widget areas (dynamic sidebars)
+ */
+add_action( 'widgets_init', 'awesome_widget_areas' );
+function awesome_widget_areas(){
+	register_sidebar(array(
+		'name' 			=> 'Blog Sidebar',
+		'id' 			=> 'blog-sidebar',
+		'description' 	=> 'Appears alongside blog posts and archives',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>',
+	));
+	register_sidebar(array(
+		'name' 			=> 'Booking Sidebar',
+		'id' 			=> 'booking-sidebar',
+		'description' 	=> 'Appears below Image Menu',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>',
+	));
+	register_sidebar(array(
+		'name' 			=> 'Footer Area',
+		'id' 			=> 'footer-area',
+		'description' 	=> 'Appears at the bottom of every screen',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>',
+	));
+	
+}
 
 
 

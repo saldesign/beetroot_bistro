@@ -2,8 +2,9 @@
 
 <main class="content">
 
-	<?php //The Loop
+<!-- TO DO: Custom Loop for featured image and content -->
 
+	<?php //The Loop
 		if(have_posts()): ?>
 		<?php while(have_posts() ): the_post(); ?>
 
@@ -38,4 +39,5 @@
 			<p>Try using the search</p>
 	<?php endif; //End The Loop ?>
 </main> <!-- end #content -->
+<?php get_sidebar(); //include sidebar.php ?>
 <?php get_footer(); //include footer.php ?>

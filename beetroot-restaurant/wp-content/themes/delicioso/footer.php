@@ -1,4 +1,4 @@
-<footer class="cf" role="contentinfo">
+<footer class="cf" id="colophon" role="contentinfo">
 	<!-- TO DO: Footer FallBack/Default -->
 	<?php //TO DO: Dynamic footer widget area ?>
 </footer>
