@@ -49,7 +49,7 @@ add_filter('excerpt_length', 'delicioso_ex_length' );
  *	@return string 		nice HTML button that links to the single post
  */
 function delicioso_readmore($dots){
-	return '&hellip; <a class="readmore" href="' . get_permalink() . '"> Read More</a>';
+	return '&hellip; <a class="readmore button" href="' . get_permalink() . '"> Read More</a>';
 }
 add_filter('excerpt_more', 'delicioso_readmore' );
 

@@ -80,7 +80,9 @@ $table_prefix  = 'projector_';
 define('WP_DEBUG', false);
 
 /**
- * Mac
+ * Mac permissions fix
+ * download batchmod and modify ht_docs to allow read and write privileges
+ * reference: http://www.barrykooij.com/unable-to-install-plugins-on-localhost/
  */
 define('FS_METHOD', 'direct');
 

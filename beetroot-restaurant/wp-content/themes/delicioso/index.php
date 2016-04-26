@@ -8,12 +8,16 @@
 		<?php while(have_posts() ): the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>"<?php post_class('cf'); ?>>
+				<?php the_post_thumbnail('thumbnail'); //don't forget to activate in functions ?> 
 				<h2 class="entry-title">
 					<a href="<?php the_permalink(); ?>">
 						<?php the_title(); ?>
 					</a>
 				</h2>	
-				<?php the_post_thumbnail('thumbnail'); //don't forget to activate in functions ?> 
+				<div class="postmeta">
+					<span class="categories"><?php the_category(); ?></span>
+					<span class="date"><a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></span>
+				</div><!-- end postmeta -->	
 				<div class="entry-content">
 					<?php 
 					//if the post is video format, show full content.
@@ -25,13 +29,7 @@
 					}
 					 ?>
 				</div>
-				<div class="postmeta">
-					<span class"author">Posted By:<?php the_author(); ?></span>
-					<span class="date"><a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></span>
-					<span class="num-comments"> <?php comments_number(); ?></span>
-					<span class="categories"><?php the_category(); ?></span>
-					<span class="tags"><?php the_tags(); ?></span> 
-				</div><!-- end postmeta -->			
+		
 			</article><!-- end post -->
 		<?php endwhile; ?>
 		<?php delicioso_pagination(); //defined in functions.php ?>
