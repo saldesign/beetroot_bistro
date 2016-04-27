@@ -40,7 +40,7 @@ add_image_size( 'big-banner', 1050, 300, true );
  *	Change default length and [...]
  */
 function delicioso_ex_length(){
-	return 50;//words
+	return 27;//words
 }
 add_filter('excerpt_length', 'delicioso_ex_length' );
 /**
@@ -49,7 +49,10 @@ add_filter('excerpt_length', 'delicioso_ex_length' );
  *	@return string 		nice HTML button that links to the single post
  */
 function delicioso_readmore($dots){
-	return '&hellip; <a class="readmore button" href="' . get_permalink() . '"> Read More</a>';
+	if(!is_front_page()){
+		return '&hellip; <a class="readmore button" href="' . get_permalink() . '"> Read More</a>';
+	}
+
 }
 add_filter('excerpt_more', 'delicioso_readmore' );
 
@@ -72,9 +75,6 @@ add_action('wp_enqueue_scripts', 'delicioso_comment_ux' );
 	function delicioso_menu_locations(){
 		register_nav_menus( array(
 				'main_menu' => 'Main Menu'
-			));
-		register_nav_menus( array(
-				'image_menu' => 'Image Menu'
 			));
 	}
 	function delicioso_menu_fallback(){

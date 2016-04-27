@@ -1,0 +1,3 @@
+Custom Post Type: Menu Item
+Custom Taxonomy: Menu Item Category
+Custom Loops for Front Page: Posts and Menu items
