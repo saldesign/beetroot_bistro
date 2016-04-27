@@ -14,6 +14,27 @@
 	//Before style.css loads so the theme stylesheet is more specific than all others.
 	wp_head();  ?>
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<?php
+
+	if (has_post_thumbnail()) { //if a thumbnail has been set
+
+		$imgID = get_post_thumbnail_id($post->ID); //get the id of the featured image
+		$featuredImage = wp_get_attachment_image_src($imgID, 'full' );//get the url of the featured image (returns an array)
+		$imgURL = $featuredImage[0]; //get the url of the image out of the array
+
+		?>
+		<style type="text/css">
+
+	    .main-header {
+	         background-image: url(<?php echo $imgURL ?>);
+			}
+
+	  </style>
+
+	  <?php
+	}//end if
+
+	?>
 </head>
 <body <?php body_class(); ?>>	
 	<div class="wrapper">

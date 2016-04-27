@@ -64,8 +64,8 @@ body {
   color: #000;
   position: relative;
   font-family: 'Hind', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-  font-weight: '500';
-  letter-spacing: .0125rem;
+  font-weight: 300;
+  letter-spacing: .025rem;
   font-size: 100%;
   line-height: 1.125rem; }
 
@@ -100,45 +100,46 @@ a.button {
 ==Layout blocks
 */
 .content {
-  padding: .125rem;
   word-wrap: break-word;
-  padding: 1rem; }
+ }
 
 img{
   max-width: 100%;
   height: auto;
 }
+div.container{
+  background-color: #e6d5a1;
+  width: 100%;
+  height: 14rem;
+  padding: 1rem 0 0;}
 
+header.main-header{
+  height: 12rem;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 60rem;
+  position: relative;
+  background-size: cover; 
+  border-bottom: solid 3px #42a685;
+}
 .hentry {
   margin-bottom: 3rem; }
 
-.hentry h2.entry-title {
-  font-size: 1.875rem;
-  line-height: 2.125rem;
-  font-family: 'Oswald';
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: .25rem; }
+header.main-header > article.hentry {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  margin:0;
+  width: 100%;
+  max-width: 27rem;
+  font-size: 1.025rem;
+  letter-spacing: .05rem;}
+header.main-header > article.hentry .entry-title {
+  background-color: #fff9e5;
+}
 
-.hentry div.postmeta {
-  line-height: 1.5rem;
-  font-family: 'Oswald';
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: .25rem;
-  margin-bottom: .5rem; }
 
-.hentry div.postmeta span.categories a {
-  font-size: 1.25rem;
-  color: #a3ccbe; }
 
-.hentry div.postmeta span.date a {
-  font-size: 1.125rem;
-  color: #a3ccbe; }
-
-.hentry .entry-content {
-  line-height: 1.75rem;
-  color: #4d4d4d; }
 
 /*
 ==Navigation Top Bar
@@ -212,6 +213,66 @@ header nav[role=navigation] ul.nav a:hover:after {
 
 
 /*
+==Post Typography
+*/
+.hentry .entry-content {
+  line-height: 1.75rem;
+  color: #fff9e5;
+  background-color: #42a685;
+  padding: .5rem 1rem;
+ }
+.hentry h2.entry-title,
+nav.image-menu-nav ul li a {
+  font-size: 1.875rem;
+  line-height: 2.125rem;
+  font-family: 'Oswald';
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .25rem; 
+  display: inline-block;
+  padding:.25rem .5rem;
+  border:solid 4px #42a685;
+  background-color: #fff9e5;
+  margin:0 1rem -4px;
+}
+.hentry div.postmeta {
+  line-height: 1.5rem;
+  font-family: 'Oswald';
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: .25rem;
+  margin-bottom: .5rem; }
+.hentry div.postmeta span.categories a {
+  font-size: 1.25rem;
+  color: #a3ccbe; }
+
+.hentry div.postmeta span.date a {
+  font-size: 1.125rem;
+  color: #a3ccbe; }
+
+
+/*
+==Navigation Image Menu Bar
+*/
+
+nav.image-menu-nav {
+  background-color: #42a685;
+  height: 9rem;
+}
+nav.image-menu-nav ul li{
+  background: url('images/carrots.jpeg');
+  background-size: cover;
+  border: solid 1rem #42a685;
+  height: 12rem;
+  position: relative;
+}
+nav.image-menu-nav ul li a{
+  margin:0 0 0 1rem;
+  position: absolute;
+  bottom: -10px;
+}
+
+/*
 ==Media Queries
 */
 
@@ -220,12 +281,16 @@ header nav[role=navigation] ul.nav a:hover:after {
         display:none;
     }
     html {
-        position:absolute;
-        top:-28px;
+        position:relative;
+        top:-46px;
     }
 }
 
 
+@media screen and (min-width: 675px){
+  nav.image-menu-nav ul li{
+    float: left;
+    width: 33.33%;
+  }
+}
 
-
-/*# sourceMappingURL=style.css.map */
