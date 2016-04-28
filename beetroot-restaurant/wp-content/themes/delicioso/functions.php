@@ -205,6 +205,19 @@ function blog_feed($number = 6){
 }//end blog_feed()
 
 
+add_action('wp_enqueue_scripts', 'delicioso_scripts');
+function delicioso_scripts(){
+	//attach jq
+	wp_enqueue_script('jquery' );
+	//attach script.js
+	$js_url =  get_stylesheet_directory_uri().'/js/script.js';
+	//								handle 			 url 		dependancies     ver 	in footer
+	wp_enqueue_script('delicioso_js', $js_url, array('jquery'));
+	//attach html5.js
+	$html5_url =  get_stylesheet_directory_uri().'/js/html5.js';
+	//								handle 			 url 		dependancies     ver 	in footer
+	wp_enqueue_script('html5', $html5_url);
+}
 
 
 

@@ -1,10 +1,7 @@
-Custom Post Type: Menu Item
-Custom Taxonomy: Menu Item Category
-Custom Loops for Front Page: Posts and Menu items
-
-
-
+Events - 
+About
+Contact
+Reservations
 Basic CSS 
-Create Templates for Menu
 Front Page Footer - placeholders
   

@@ -1,48 +1,39 @@
-<?php get_header(); //include header.php ?>
+<?php 
+//edit these to match the stuff you registered in your custom post type plugin
+$post_type = 'menuitem';
+$taxonomy = 'menuitemcat'; ?>
 
-<main class="content">
+<?php get_header(); ?>
+<?php         
 
-<!-- TO DO: Custom Loop for featured image and content -->
-<!-- QUESTION: How can I reuse the code from front page
- -->
+// Gets every term in this taxonomy
+$terms = get_terms( $taxonomy );
 
+//go through each term in this taxonomy one at a time
+foreach( $terms as $term ) : 
 
+    //get ONE post assigned to this term
+    $custom_loop = new WP_Query( array(
+        'post_type' => $post_type,
+        'taxonomy' => $taxonomy,
+        'term' => $term->slug,
+        ) );
+    
+    //LOOP
+    if( $custom_loop->have_posts() ): ?>
+    <h2><?php echo $term->name; ?></h2>
+    <?php
+        while( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
+<article>
+    <h3><?php the_title(); ?></h3>
+    <p><?php the_content( ); ?></p>
+    <?php the_post_thumbnail(); ?>
+</article>
 
-	<?php //The Loop
-		if(have_posts()): ?>
-		<?php while(have_posts() ): the_post(); ?>
-
-
-
-			<article id="post-<?php the_ID(); ?>"<?php post_class('cf'); ?>>
-				<?php the_post_thumbnail('thumbnail'); //don't forget to activate in functions ?> 
-				<h2 class="entry-title">
-					<a href="<?php the_permalink(); ?>">
-						<?php the_title(); ?>
-					</a>
-				</h2>	
-				<div class="postmeta">
-					<span class="categories"><?php the_category(); ?></span>
-				</div><!-- end postmeta -->	
-				<div class="entry-content">
-					<?php 
-					//if the post is video format, show full content.
-					//otherwise show the short content (excerpt)
-					if(is_singular() OR has_post_format('video')){
-						the_content();
-					}else{
-						the_excerpt();
-					}
-					 ?>
-				</div>
-		
-			</article><!-- end post -->
-		<?php endwhile; ?>
-		<?php delicioso_pagination(); //defined in functions.php ?>
-		<?php else: ?>
-			<h2>Sorry, no posts found</h2>
-			<p>Try using the search</p>
-	<?php endif; //End The Loop ?>
-</main> <!-- end #content -->
-<?php get_sidebar(); //include sidebar.php ?>
-<?php get_footer(); //include footer.php ?>
+<?php 
+        endwhile; 
+    endif;
+endforeach;
+?>
+<?php get_sidebar() ?>
+<?php get_footer() ?>

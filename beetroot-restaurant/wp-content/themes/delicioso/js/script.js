@@ -1,4 +1,5 @@
-$(document).ready(function() {
+jQuery(document).ready(function($) {
+//Disable no conflict in $document.ready
 //Add class js and set variables
   $('body').addClass('js');
   var $menulink = $('.menu-link'),
