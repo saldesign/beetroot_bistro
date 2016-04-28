@@ -3,8 +3,8 @@
 <main class="content">
 
 <!-- TO DO: Custom Loop for featured image and content -->
-
-
+<!-- QUESTION: How can I reuse the code from front page
+ -->
 
 
 
@@ -23,7 +23,6 @@
 				</h2>	
 				<div class="postmeta">
 					<span class="categories"><?php the_category(); ?></span>
-					<span class="date"><a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></span>
 				</div><!-- end postmeta -->	
 				<div class="entry-content">
 					<?php 

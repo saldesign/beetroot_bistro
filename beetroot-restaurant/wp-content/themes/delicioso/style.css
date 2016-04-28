@@ -11,31 +11,8 @@ Tags:green, two-columns
 ------------------------------
 	Table of Contents
 ------------------------------
-==Clear Fix
-==Basic Links
-==Layout blocks
-==Navigation Top Bar
-==Search Bar (top)
-==utilities (top) 
-==Breadcrumbs
-==pagination
-==Search Form
-==comment form
-==comments list
-==sidebar and widget typography and layout
-==post typography 
-==blockquotes 
-==Gallery
-==Forms
-==tables
-==Lists
-==misc tags
-==Calendar Widget
-==custom post type - products 
-==Latest Products   
-==Contact info options box
-==Templates
-==Media Queries
+
+
 */
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
 @import url(https://fonts.googleapis.com/css?family=Hind:700,600,500,400,300);
@@ -56,10 +33,9 @@ Tags:green, two-columns
   *zoom: 1; }
 
 /*
-==Basic Links
+==Global
 */
 body {
-  /* Remove For Customization */
   background-color: #fff;
   color: #000;
   position: relative;
@@ -76,55 +52,42 @@ a {
   -moz-transition: all 300ms ease-out;
   -ms-transition: all 300ms ease-out;
   -o-transition: all 300ms ease-out;
-  transition: all 300ms ease-out; }
-
+  transition: all 300ms ease-out; 
+}
 a:hover,
 a:focus {
-  color: #e6b217; }
-
-a.button {
+  color: #e6b217; 
+}
+.button {
   font-family: 'Oswald';
   text-align: center;
   line-height: 2rem;
-  font-size: 1.25rem;
-  padding: 0 3rem;
+  font-size: 1.125rem;
   border: solid 2px #42a685;
   background-color: #fff9e5;
+  color: #42a685; 
   display: block;
   text-transform: uppercase;
-  width: 15rem;
+  width: 10rem;
   font-weight: 300;
-  letter-spacing: .25rem; }
+  letter-spacing: .25rem; 
+}
+.button:hover {
+  border: solid 2px #fff9e5;
+  background-color: #42a685;
+  color: #fff9e5;
+  letter-spacing: .3rem; 
+}
 
-/*
-==Layout blocks
-*/
-.content {
-  word-wrap: break-word;
- }
 
+
+.hentry {
+  margin-bottom: 3rem; 
+}
 img{
   max-width: 100%;
   height: auto;
 }
-div.container{
-  background-color: #e6d5a1;
-  width: 100%;
-  height: 14rem;
-  padding: 1rem 0 0;}
-
-header.main-header{
-  height: 12rem;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 60rem;
-  position: relative;
-  background-size: cover; 
-  border-bottom: solid 3px #42a685;
-}
-.hentry {
-  margin-bottom: 3rem; }
-
 
 /*
 ==Navigation Top Bar
@@ -193,65 +156,6 @@ header nav[role=navigation] ul.nav a:hover:after {
   background-color: #e6b217; }
 
 
-/*
-==Quick Links
-*/
-
-header.main-header > article.hentry {
-  position: absolute;
-  bottom: 0;
-  left: 1rem;
-  margin:0;
-  width: 100%;
-  max-width: 27rem;
-  font-size: 1.025rem;
-  letter-spacing: .05rem;
-}
-header .hentry h2.entry-title {
-  display: inline-block;
-  padding:.25rem .5rem;
-  border:solid 4px #42a685;
-  background-color: #fff9e5;
-  margin:0 1rem -4px;
-}
-header .hentry .entry-content {
-  color: #fff9e5;
-  background-color: #42a685;
-  padding: .5rem 1rem;
-}
-
-/*
-==Post Typography
-*/
-.hentry .entry-content {
-  line-height: 1.75rem;
- }
- .hentry h2.entry-title {
-   font-size: 1.875rem;
-   line-height: 2.125rem;
-   font-family: 'Oswald';
-   font-weight: 400;
-   text-transform: uppercase;
-   letter-spacing: .25rem; 
- }
-
-.hentry div.postmeta {
-  line-height: 1.5rem;
-  font-family: 'Oswald';
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: .25rem;
-  margin-bottom: .5rem; 
-}
-.hentry div.postmeta span.categories a {
-  font-size: 1.25rem;
-  color: #a3ccbe; 
-}
-.hentry div.postmeta span.date a {
-  font-size: 1.125rem;
-  color: #a3ccbe; 
-}
-
 
 /*
 ==Media Queries
@@ -267,11 +171,4 @@ header .hentry .entry-content {
     }
 }
 
-
-@media screen and (min-width: 675px){
-  nav.image-menu-nav ul li{
-    float: left;
-    width: 33.33%;
-  }
-}
 

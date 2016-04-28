@@ -148,8 +148,61 @@ function awesome_widget_areas(){
 }
 
 
+//QUESTION: Should this go in plugins?
+//Menuitem loop
+function menu_feed($number = 6){
+	$menuitem_query = new WP_Query(array(
+		'post_type' 		=> 'menuitem',
+		'posts_per_page'	=>	$number,
+	));
+	$menuitemcategory = get_terms( 'menuitemcat', array(
+	    'orderby'    => 'count',
+	    'hide_empty' => 0
+	) );
+	//custom loop
+	if($menuitem_query->have_posts()){ ?>
+		<section class="menu-feed">
+		<h3>New Menu Items</h3>
+		<?php while($menuitem_query->have_posts()){
+					$menuitem_query->the_post(); ?>
+				<article class="hentry">
+					<a href="<?php the_permalink(); ?>">
+						<h4><?php the_title( ); ?></h4>
+						<?php the_terms( $post->ID, 'menuitemcat', '<p>','', '<p>' ); ?>
+					</a>
+					<?php the_post_thumbnail('thumbnail' ); ?>
+					<p><?php the_excerpt(); ?></p>
+					<a class="button" href="<?php the_permalink(); ?>">Read More</a>
+				</article>
+		<?php }//end while have posts ?>
+		</section>
+<?php	}//end if have posts 
+}//end menu_feed()
 
-
+//Blog Feed loop
+function blog_feed($number = 6){
+	$blogfeed_query = new WP_Query(array(
+		'post_type' 		=> 'post',
+		'posts_per_page'	=>	$number,
+	));
+	//custom loop
+	if($blogfeed_query->have_posts()){ ?>
+		<section class="blog-feed">
+		<h3>Recent Posts</h3>
+		<?php while($blogfeed_query->have_posts()){
+					$blogfeed_query->the_post(); ?>
+				<article class="hentry">
+					<a href="<?php the_permalink(); ?>">
+						<h4><?php the_title( ); ?></h4>
+					</a>
+					<?php the_post_thumbnail('thumbnail' ); ?>
+					<p><?php the_excerpt(); ?></p>
+					<a class="button" href="<?php the_permalink(); ?>">Read More</a>
+				</article>
+		<?php }//end while have posts ?>
+		</section>
+<?php	}//end if have posts 
+}//end blog_feed()
 
 
 

@@ -16,7 +16,7 @@ Version: 0.1
 
 add_action('init', 'menu_register_cpt' );
 function menu_register_cpt(){
-	register_post_type('menu item', array(
+	register_post_type('menuitem', array(
 		'public'			=> true, //visible to users
 		'has_archive'	=> true, //all menu items archived on one page
 		'menu_position'=> 5,
@@ -33,6 +33,32 @@ function menu_register_cpt(){
 				'menu_name'			=>	'Food Menu'
 			),
 	) );
+
+	//Register the "menuitemcat" taxonomy
+	register_taxonomy('menuitemcat', 'menuitem', array(
+ 		'hierarchical'			=> true,
+ 		'show_admin_column'	=> true,
+ 		'labels'					=> array(
+ 				'name'				=>	'Menu Item Categories',
+ 				'singular_name'	=> 'Menu Item Category',
+ 				'add_new_item'		=>	'Add Item Category',
+ 				'search_items'		=> 'Search Item Categories',
+ 				'not_found'			=>	'No Item Categories Found'
+ 			),
+	));
+
+	//Register the "dietarypref" taxonomy
+	register_taxonomy('dietarypref', 'menuitem', array(
+			'hierarchical' => true,
+			'show_admin_column' => true,
+			'labels' => array(
+					'name' => 'Dietary Preferences',
+					'singular_name' => 'Dietary Preference',
+					'add_new_item' => 'Add Preference',
+					'search_items' => 'Search Dietary Preferences',
+					'not_found' => 'No Preferences found'
+				),
+		));
 
 }//end register menu CPT
 

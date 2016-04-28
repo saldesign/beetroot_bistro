@@ -4,6 +4,8 @@
 	//otherwise show fake/default widgets
 
 	if(!dynamic_sidebar('blog-sidebar')){ ?>
+	<?php get_search_form(); //includes searchform.php if it exists, if not, this outputs the default search bar ?>	
+
 		<section class="widget categories">
 			<h3 class="widget-title">Popular Categories</h3>
 			<ul>
