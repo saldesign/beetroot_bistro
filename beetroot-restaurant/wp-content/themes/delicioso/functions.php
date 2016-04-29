@@ -144,6 +144,15 @@ function awesome_widget_areas(){
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title' 	=> '</h3>',
 	));
+		register_sidebar(array(
+		'name' 			=> 'Footer Newsletter Bar Area',
+		'id' 			=> 'footer-newsletterbar',
+		'description' 	=> 'Appears at the bottom of every screen',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title' 	=> '</h3>',
+	));
 	
 }
 
@@ -168,7 +177,7 @@ function menu_feed($number = 6){
 				<article class="hentry">
 					<a href="<?php the_permalink(); ?>">
 						<h4><?php the_title( ); ?></h4>
-						<?php the_terms( $post->ID, 'menuitemcat', '<p>','', '<p>' ); ?>
+						<?php the_terms( get_the_id(), 'menuitemcat', '<p>','', '<p>' ); ?>
 					</a>
 					<?php the_post_thumbnail('thumbnail' ); ?>
 					<p><?php the_excerpt(); ?></p>

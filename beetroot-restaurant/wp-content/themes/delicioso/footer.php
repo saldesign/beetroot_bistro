@@ -1,6 +1,7 @@
 <footer class="cf" id="colophon" role="contentinfo">
 	<!-- TO DO: Footer FallBack/Default -->
-	<section class="newsletter">Join The Newsletter <!-- TODO --></section>
+	<?php dynamic_sidebar( 'footer-newsletterbar' ); ?>		
+
 	<section class="contact">
 		<h2>Contact</h2>
 		<div class="widget">
