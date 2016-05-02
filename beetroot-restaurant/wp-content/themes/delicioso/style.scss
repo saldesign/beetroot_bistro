@@ -12,26 +12,6 @@ Tags:green, two-columns
 	Table of Contents
 ------------------------------
 
-
-/*
-==Clear Fix
-*/
-
-.cf:before,
-.cf:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ 
-}
-.cf:after {
-  clear: both; 
-}
-.cf {
-  *zoom: 1; 
-}
-
-
 /*
 ==Colors
 */
@@ -44,12 +24,42 @@ $brown: #4d4536;
 
 
 /*
-==Design Elements
+==Layout
+*/
+$basePadding:1rem;
+
+
+/*
+==Includes
 */
 
 .fat-bb{
   border-bottom:4px solid $green;
 }
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+
+/*
+==Mixins
+*/
+
 @mixin transition($duration){
   -webkit-transition: all $duration ease-out;
   -moz-transition: all $duration ease-out;
@@ -57,6 +67,33 @@ $brown: #4d4536;
   -o-transition: all $duration ease-out;
   transition: all $duration ease-out; 
 }
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+@mixin breakpoint($point){
+  @if $point == large {
+    @media (min-width:60em){@content;}
+  }
+  @if $point == medium {
+    @media (min-width:40em){@content;}
+  }
+  @if $point == small {
+    @media (min-width:20em){@content;}
+  }
+}
+
 
 /*
 ==Typography
@@ -68,6 +105,15 @@ $headingSize: 2rem;
 $headingLineHeight: 2rem;
 $baseSize: 1rem;
 $baseLineHeight: 1.75rem; 
+
+$OswaldBold: 700;
+$OswaldRegular: 400;
+$Oswaldlight: 300;
+$HindExtraBold: 700;
+$HindBold: 600;
+$HindMedium: 500;
+$HindRegular:400;
+$HindLight:300;
 
 h2,h3,h4,h5,h6{
   text-transform: uppercase;
@@ -91,6 +137,7 @@ body {
   position: relative;
   font-family: 'Hind', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-size: 100%;
+  @include box-sizing(border-box);
 }
 
   a,
@@ -98,9 +145,8 @@ body {
   a:visited {
     color: $green;
     text-decoration: none;
-    @include transition(300ms);
+    @include transition(500ms);
   }
-
     a:hover,
     a:focus,
     a:active,
@@ -108,34 +154,42 @@ body {
       color: $gold; 
     }
 
-    .button {
-      font-family: 'Oswald';
-      text-align: center;
-      line-height: 2rem;
-      font-size: 1.125rem;
-      border: solid 2px $green;
-      background-color: $tan;
-      color: $green; 
-      display: block;
-      text-transform: uppercase;
-      width: 10rem;
-      font-weight: 300;
-      letter-spacing: .25rem; 
-    }
-      .button:hover {
-        border: solid 2px $tan;
-        background-color: $green;
-        color: $tan;
-        letter-spacing: .3rem; 
+      .button {
+        font-family: 'Oswald';
+        text-align: center;
+        line-height: 2rem;
+        font-size: 1.125rem;
+        border: solid 2px $green;
+        background-color: $tan;
+        color: $green; 
+        display: block;
+        text-transform: uppercase;
+        width: 10rem;
+        font-weight: 300;
+        letter-spacing: .25rem; 
+
+        &:hover,
+        &:focus {
+          border: solid 2px $tan;
+          background-color: $green;
+          color: $tan;
+          letter-spacing: .4rem; 
+          @include transition(500ms);
+        }
       }
-    h2.button,
-    h3.button{
-      font-size: $headingSize;
-      line-height: $headingLineHeight + .75;
-    }
+
+        h2 a.button{
+          font-size: $headingSize;
+          line-height: $headingLineHeight + .75rem;
+          font-weight: $OswaldRegular;
+        }
+        h3 a.button{
+          font-size: $headingSize - .5rem;
+          line-height: $headingLineHeight + .5rem;
+        }
 
 /*
-==Header
+==Wrapper
 */
 
 div.wrapper{
@@ -178,7 +232,6 @@ header[role=banner] {
     text-align: center; 
   }
 
-
   header nav[role=navigation] ul.nav {
     position: absolute;
     top: -3000%;
@@ -200,34 +253,40 @@ header[role=banner] {
       font-weight: 400;
       letter-spacing: .125rem; 
     }
+
       header nav[role=navigation] ul.nav a {
-        display: block;
-        padding: .5rem 0;
+        display: inline-block;
+        padding: .5rem 3rem;
         @include transition(600ms);
-      }
-        header nav[role=navigation] ul.nav a:after {
+      
+        &:after {
           content: "";
           display: block;
           height: 3px;
-          width: 3rem;
+          width: 0rem;
           margin: 0 auto; 
         }
-        header nav[role=navigation] ul.nav a:hover:after {
-          background-color: $green; 
+
+        &:hover:after {
+          background-color: $gold; 
+          width:60%;
           @include transition(300ms);
         }
+      }
+
         header nav[role=navigation] ul.nav li:last-child a{
           color: white;
           background-color:$green;
+          border: solid 2px transparent;
+          @include border-radius(.25rem);
 
-        }
-          header nav[role=navigation] ul.nav li:last-child a:hover{
+          &:hover{
             border: solid 2px $green;
             background-color: $tan;
             color: $green;
             @include transition(300ms);
-
           }
+        }
 
 /*
 ==headerBanner
@@ -259,12 +318,18 @@ div.header-container{
       }
 
 
-
-
 /*
-==WpContent
+==MainContent
 */
+main.content{
+  padding:$basePadding;
 
+  @include breakpoint(medium){
+    float: left;
+    width: 70%;
+
+  }
+}
 main .hentry {
   margin-bottom: 3rem; 
 }
@@ -274,12 +339,32 @@ img{
   height: auto;
 }
 
+
+/*
+==Sidebar
+*/
+aside.sidebar{
+  background-color:$tan;
+  padding:$basePadding;
+
+  @include breakpoint(medium){
+    float: right;
+    width: 30%;
+
+  }
+}
+
+
 /*
 ==Footer
 */
 footer{
   background-color:$tan;
+  clear:both;
 }
+  footer > section{
+    padding:$basePadding;
+  }
   footer section.widget_mc4wp_form_widget,
   footer section.widget_mc4wp_form_widget h3{
     background-color:$green;

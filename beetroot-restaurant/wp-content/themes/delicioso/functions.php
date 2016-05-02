@@ -86,7 +86,7 @@ add_action('wp_enqueue_scripts', 'delicioso_comment_ux' );
  */
 function delicioso_pagination(){
 	?>
-	<section class="pagination">
+	<div class="pagination">
 		<?php 
 		if( is_singular() ){
 			previous_post_link('%link', 'Older Post: %title'); 	//1 older post
@@ -104,7 +104,7 @@ function delicioso_pagination(){
 		 	next_posts_link('Older Posts &rarr;'); 
 		}
 		 ?>
-		</section>
+		</div>
 	<?php 
 }
 
@@ -177,10 +177,11 @@ function menu_feed($number = 6){
 				<article class="hentry">
 					<a href="<?php the_permalink(); ?>">
 						<h4><?php the_title( ); ?></h4>
-						<?php the_terms( get_the_id(), 'menuitemcat', '<p>','', '<p>' ); ?>
 					</a>
+					<?php the_terms( get_the_id(), 'menuitemcat', '<p>','', '</p>' ); ?>
+					
 					<?php the_post_thumbnail('thumbnail' ); ?>
-					<p><?php the_excerpt(); ?></p>
+					<?php the_excerpt(); ?>
 					<a class="button" href="<?php the_permalink(); ?>">Read More</a>
 				</article>
 		<?php }//end while have posts ?>
@@ -205,7 +206,7 @@ function blog_feed($number = 6){
 						<h4><?php the_title( ); ?></h4>
 					</a>
 					<?php the_post_thumbnail('thumbnail' ); ?>
-					<p><?php the_excerpt(); ?></p>
+					<?php the_excerpt(); ?>
 					<a class="button" href="<?php the_permalink(); ?>">Read More</a>
 				</article>
 		<?php }//end while have posts ?>

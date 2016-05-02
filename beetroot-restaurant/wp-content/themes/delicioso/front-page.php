@@ -9,8 +9,8 @@
 			<article id="post-<?php the_ID(); ?>" 
 			<?php post_class('cf'); ?>>	
 
-				<h2 class="entry-title button"> 
-					<a href="<?php the_permalink(); ?>"> 
+				<h2 class="entry-title"> 
+					<a class="button" href="<?php the_permalink(); ?>"> 
 						<?php the_title(); ?> 
 					</a>
 				</h2>
@@ -46,9 +46,16 @@
 		<li>
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail('thumbnail' ); ?>
-				<h3 class="button"><?php the_title(); ?></h3>
-				<p><?php the_excerpt(); ?></p>
 			</a>
+				<h3>
+					<a class="button" href="<?php the_permalink(); ?>">
+						<?php the_title(); ?>
+					</a>
+				</h3>
+				<a href="<?php the_permalink(); ?>">
+					<?php the_excerpt(); ?>
+				</a>
+			
 		</li>
 	<?php }//close while have posts ?>
 	</ul>

@@ -14,7 +14,7 @@
 
 
 
-			<article id="post-<?php the_ID(); ?>"<?php post_class('cf'); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
 				<?php the_post_thumbnail('thumbnail'); //don't forget to activate in functions ?> 
 				<h2 class="entry-title">
 					<a href="<?php the_permalink(); ?>">
@@ -22,7 +22,7 @@
 					</a>
 				</h2>	
 				<div class="postmeta">
-					<span class="categories"><?php the_category(); ?></span>
+					<div class="categories"><?php the_category(); ?></div>
 					<span class="date"><a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></span>
 				</div><!-- end postmeta -->	
 				<div class="entry-content">
