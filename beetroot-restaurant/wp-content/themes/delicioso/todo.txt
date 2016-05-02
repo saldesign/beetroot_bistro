@@ -1,7 +1,31 @@
-Events - 
+Add Custom Single Page Template
+
+
+
+Menu
+	Order by category_id meta box
+		Filter/Query by Meta value - when items shouldn't be sorted by date or name 
+		https://app.pluralsight.com/player?course=custom-content-types-code-like-wordpress-ninja&author=chris-reynolds&name=custom-content-types-code-like-wordpress-ninja-02&clip=2&mode=live
+		1:00
+
 About
-Contact
-Reservations
-Basic CSS 
-Front Page Footer - placeholders
+	Add Some Custom Meta boxes to this page.
+
+Basic CSS - Introduce Sass variables, mix ins, nesting, @extend
+	Header Nav - Code Pen (hamburger animation)
+	Text Formatting
+	Layout
+	Grid Responsive 
+Footer - placeholders
   
+
+
+
+
+  Sass in Terminal
+
+  PC1:~ chsaldarriaga$ sass --watch /beetroot_bistro/beetroot-restaurant
+  >>> Sass is watching for changes. Press Ctrl-C to stop.
+    directory /beetroot_bistro
+  Errno::EACCES: Permission denied - /beetroot_bistro
+    Use --trace for backtrace.

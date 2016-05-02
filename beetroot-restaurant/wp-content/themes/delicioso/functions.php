@@ -9,13 +9,13 @@
 // turns on featured image
 add_theme_support('post-thumbnails');
 
-// allows you to personalize styles for post types
+//TODO: allows you to personalize styles for post types
 add_theme_support('post-formats', array('quote', 'image', 'gallery', 'video', 'link', 'audio', 'chat', 'status', 'aside',  ) );
 
-//background customizer
+//TODO: background customizer
 add_theme_support('custom-background' );
 
-//logo uploader
+//TODO: logo uploader
 add_theme_support('custom-logo', array(
 	'height' => 80,
 	'width' => 324,
@@ -52,7 +52,6 @@ function delicioso_readmore($dots){
 	if(!is_front_page()){
 		return '&hellip; <a class="readmore button" href="' . get_permalink() . '"> Read More</a>';
 	}
-
 }
 add_filter('excerpt_more', 'delicioso_readmore' );
 
@@ -110,8 +109,6 @@ function delicioso_pagination(){
 }
 
 
-//TO DO: Widget Areas (dynamic sidebars)
-
 /**
  * Create widget areas (dynamic sidebars)
  */
@@ -153,8 +150,11 @@ function awesome_widget_areas(){
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title' 	=> '</h3>',
 	));
-	
 }
+
+
+
+
 
 
 //QUESTION: Should this go in plugins?
@@ -212,6 +212,30 @@ function blog_feed($number = 6){
 		</section>
 <?php	}//end if have posts 
 }//end blog_feed()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 add_action('wp_enqueue_scripts', 'delicioso_scripts');

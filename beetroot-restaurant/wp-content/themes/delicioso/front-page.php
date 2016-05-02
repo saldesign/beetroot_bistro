@@ -1,17 +1,15 @@
 <?php get_header(); //include header.php ?>
 
-<main class="content">
 <?php //THE LOOP
 	if( have_posts() ): ?>
 	<?php while( have_posts() ): the_post(); ?>
 
-	<?php// the_post_thumbnail('big-banner'); //don't forget to activate in functions ?>
 	<div class="header-container">
-		<header class="main-header">
+		<header class="banner-header">
 			<article id="post-<?php the_ID(); ?>" 
 			<?php post_class('cf'); ?>>	
 
-				<h2 class="entry-title"> 
+				<h2 class="entry-title button"> 
 					<a href="<?php the_permalink(); ?>"> 
 						<?php the_title(); ?> 
 					</a>
@@ -59,7 +57,7 @@
 
 <?php dynamic_sidebar('booking-sidebar'); //add booking widget area ?>
 
-
+<main class="content">
 <?php menu_feed(); ?>
 <?php blog_feed(); ?>
 
