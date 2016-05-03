@@ -36,6 +36,9 @@ $basePadding:1rem;
 .fat-bb{
   border-bottom:4px solid $green;
 }
+.outline{
+  outline:solid 4px $green;
+}
 .cf:before,
 .cf:after {
     content: " "; /* 1 */
@@ -164,9 +167,8 @@ body {
         border: solid 2px $green;
         background-color: $tan;
         color: $green; 
-        display: block;
-        min-width: 12rem;
-        padding: 0 1rem;
+        display: inline-block;
+        padding: 0 1.5rem;
         text-transform: uppercase;
         font-weight: 300;
         letter-spacing: .25rem; 
@@ -178,19 +180,18 @@ body {
           border: solid 2px $tan;
           background-color: $green;
           color: $tan;
-          box-shadow: 2px 4px 6px rgba(0,0,0,0.2),
-                        0px -2px 35px rgba(155,155,155,0.3); 
+          box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.6); 
           text-shadow: 0px 0px 3px rgba(255,255,255,0.3);
           @include transition(500ms);
         }
       }
 
-        h2 a.button{
+        h2 .button{
           font-size: $headingSize;
           line-height: $headingLineHeight + .75rem;
           font-weight: $OswaldRegular;
         }
-        h3 a.button{
+        h3 .button{
           font-size: $headingSize - .5rem;
           line-height: $headingLineHeight + .5rem;
         }
@@ -317,13 +318,21 @@ div.header-container{
       bottom: -5rem;
     }
       header.banner-header article.hentry h2{
-        display: block;
+        background-color: $green;
+        padding: 10px 6px 8px;
+        display: inline-block;
+        position: relative;
+        top: 1rem;
+        left: 1.5rem;
       }
       header.banner-header article.hentry div.entry-content{
         background-color:$green;
-        padding: 1rem .75rem .25rem;
+        padding: $basePadding .75rem .25rem;
       }
 
+      .header-container .button{
+          
+      }
 
 /*
 ==Quicklinks
@@ -334,6 +343,7 @@ nav.quicklinks-container{
   padding:$basePadding;
   a p{
     color: $tan;
+    margin-top: -2rem;
     @include transition(300ms);
   }
 
@@ -342,11 +352,36 @@ nav.quicklinks-container{
   }
 }
   ul.quicklinks li{
+    max-width: 27rem;
+    margin: 0 auto 1rem;
+
+    &:first-child{
+      padding-right:1rem;
+    }
+    &:last-child{
+      padding-left:1rem;
+    }
+
     @include breakpoint(medium){
       float: left;
       width:33.33%;
     }
+
+
+    img{
+      max-width: 27rem;
+      width: 100%;
+    }
+    h3{
+      background-color: $green;
+      padding: 4px;
+      display: inline-block;
+      position: relative;
+      top: -2.25rem;
+      left: 1.5rem;
+    }
   }
+
 
 
 /*

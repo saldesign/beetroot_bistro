@@ -2,41 +2,51 @@
 
 <main class="content">
 
-<!-- TO DO: Custom Loop for featured image and content -->
-<?php //featured image and content loop
-$featured_query = new WP_Query(array(
-));
-
-//custom loop
-if($featured_query->have_posts()){ ?> 
-	<div class="header-container"> 
- 		<header class="banner-header"> <?php 
- 		while($featured_query-> have_posts()){
-			$featured_query->the_post(); ?>
-			<article id="post-<?php the_ID(); ?>" 
-			<?php post_class('cf'); ?>>	
-
-				<h2 class="entry-title"> 
-					<a class="button" href="<?php the_permalink(); ?>"> 
-						<?php the_title(); ?> 
-					</a>
-				</h2>
-				
-				<div class="entry-content">
-					<?php 
-					the_excerpt();
-					?>
-				</div>						
-			</article><!-- end post -->
-		<?php } ?>
-		</header><!-- end main header -->
-	</div>
-<?php }else{echo "no posts";} ?>
+<?php 
+$page_for_posts = get_option('page_for_posts');
+if( is_home() && $page_for_posts ) :
+  //echo get_the_post_thumbnail($page_for_posts, 'medium');
 
 
+$imgID = get_post_thumbnail_id($page_for_posts); //get the id of the featured image
+		$featuredImage = wp_get_attachment_image_src($imgID, 'full' );
+	$imgURL = $featuredImage[0];
+	
+
+?>
+
+<style type="text/css">
+
+	    .banner-header {
+	         background-image: url(<?php echo $imgURL ?>);
+			}
+</style>
+<div class="header-container">
+	<header class="banner-header">
+		<article id="post-<?php the_ID(); ?>" 
+		<?php post_class('cf'); ?>>	
+
+			<h2 class="entry-title"> 
+				<span class="button"> 
+					<?php echo get_the_title($page_for_posts); ?> 
+				</span>
+			</h2>
+			
+			<div class="entry-content">
+				<?php 
+					echo get_the_content($page_for_posts);
+				?>
+			</div>
+					
+		</article><!-- end post -->
+	</header><!-- end main header -->
+</div>
+
+<?php
+endif;
 
 
-	<?php //The Loop
+//The Loop
 		if(have_posts()): ?>
 		<?php while(have_posts() ): the_post(); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
