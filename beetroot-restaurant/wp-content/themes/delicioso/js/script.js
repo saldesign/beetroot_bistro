@@ -16,6 +16,20 @@ jQuery(document).ready(function($) {
 	  }
 	  return false;
 	});//End menulink.click
+
+
+    $('input').on('change', function() {
+      var input = $(this);
+      if (input.val().length) {
+        input.addClass('populated');
+      } else {
+        input.removeClass('populated');
+      }
+    });
+    
+    setTimeout(function() {
+      $('#fname').trigger('focus');
+    }, 500);
 });//End document.ready 
 
 

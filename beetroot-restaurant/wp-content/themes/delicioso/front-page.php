@@ -40,12 +40,12 @@
 	//custom loop
 	if($quicklink_query->have_posts()){ ?>
 	<nav class="quicklinks-container">
-	<ul class="quicklinks">
+	<ul class="quicklinks cf">
 	<?php while($quicklink_query-> have_posts()){
 				$quicklink_query->the_post(); ?>
 		<li>
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail('thumbnail' ); ?>
+				<?php the_post_thumbnail('quicklink' ); ?>
 			</a>
 				<h3>
 					<a class="button" href="<?php the_permalink(); ?>">

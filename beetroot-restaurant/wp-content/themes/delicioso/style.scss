@@ -101,6 +101,8 @@ $basePadding:1rem;
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
 @import url(https://fonts.googleapis.com/css?family=Hind:700,600,500,400,300);
 
+$fontstack: 'Hind', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+
 $headingSize: 2rem;
 $headingLineHeight: 2rem;
 $baseSize: 1rem;
@@ -135,7 +137,7 @@ body {
   background-color: #fff;
   color: #000;
   position: relative;
-  font-family: 'Hind', Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-family: $fontstack;
   font-size: 100%;
   @include box-sizing(border-box);
 }
@@ -163,17 +165,22 @@ body {
         background-color: $tan;
         color: $green; 
         display: block;
+        min-width: 12rem;
+        padding: 0 1rem;
         text-transform: uppercase;
-        width: 10rem;
         font-weight: 300;
         letter-spacing: .25rem; 
+        text-shadow: rgba(155,155,155,0.5) 0px 1px 3px; 
+        cursor: pointer;
 
         &:hover,
         &:focus {
           border: solid 2px $tan;
           background-color: $green;
           color: $tan;
-          letter-spacing: .4rem; 
+          box-shadow: 2px 4px 6px rgba(0,0,0,0.2),
+                        0px -2px 35px rgba(155,155,155,0.3); 
+          text-shadow: 0px 0px 3px rgba(255,255,255,0.3);
           @include transition(500ms);
         }
       }
@@ -293,7 +300,7 @@ header[role=banner] {
 */
 div.header-container{
   background-color:$darkTan;
-  padding: 1rem .5rem 6rem;
+  padding: 1rem $basePadding 6rem;
 }
   header.banner-header{
     position: relative;
@@ -319,6 +326,111 @@ div.header-container{
 
 
 /*
+==Quicklinks
+*/
+
+nav.quicklinks-container{
+  background-color:$green;
+  padding:$basePadding;
+  a p{
+    color: $tan;
+    @include transition(300ms);
+  }
+
+  a:hover p{
+    color: $gold;
+  }
+}
+  ul.quicklinks li{
+    @include breakpoint(medium){
+      float: left;
+      width:33.33%;
+    }
+  }
+
+
+/*
+==Booking
+*/
+.widget_rtb_booking_form_widget {
+  padding:$basePadding;
+  background:url(images/pattern.png);
+}
+
+/*
+==Forms
+*/
+
+form {
+  
+  label {
+    position: relative;
+    display: block;
+    
+    input {
+      font: 18px Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+      display: block;
+      border: none;
+      padding: 20px;
+      width: 300px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      
+      &::placeholder {
+        transition: all 0.2s ease-in-out;
+        color: #999;
+        font: 18px Helvetica, Arial, sans-serif;
+      }
+      
+      &:focus, &.populated {
+        padding-top: 28px;
+        padding-bottom: 12px;
+        
+        &::placeholder {
+          color: transparent;
+        }
+        
+        & + span {
+          opacity: 1;
+          top: 10px;
+        }
+      }
+      
+      
+      
+    }
+    
+    span {
+      color: #35dc9b;
+      font: 13px Helvetica, Arial, sans-serif;
+      position: absolute;
+      top: 0px;
+      left: 20px;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  
+  input[type="submit"] {
+    transition: all 0.2s ease-in-out;
+    font: 18px Helvetica, Arial, sans-serif;
+    border: none;
+    background: #1aaf75;
+    color: #fff;
+    padding: 16px 40px;
+    
+    &:hover {
+      background: #109f67;
+    }
+  }
+}
+
+
+
+/*
 ==MainContent
 */
 main.content{
@@ -327,7 +439,6 @@ main.content{
   @include breakpoint(medium){
     float: left;
     width: 70%;
-
   }
 }
 main .hentry {
@@ -338,6 +449,8 @@ img{
   max-width: 100%;
   height: auto;
 }
+
+
 
 
 /*

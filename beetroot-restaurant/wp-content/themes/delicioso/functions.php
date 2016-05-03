@@ -33,7 +33,8 @@ add_theme_support('title-tag' );
 //special image size for the front page banner
 //						name 			  w    h   crop?
 add_image_size( 'big-banner', 1050, 300, true );
-
+add_image_size('quicklink', 300, 240, true  );
+add_image_size('widethumb', 300, 150, true  );
 
 /**
  * Make Excerpts Better!
@@ -180,7 +181,7 @@ function menu_feed($number = 6){
 					</a>
 					<?php the_terms( get_the_id(), 'menuitemcat', '<p>','', '</p>' ); ?>
 					
-					<?php the_post_thumbnail('thumbnail' ); ?>
+					<?php the_post_thumbnail('medium' ); ?>
 					<?php the_excerpt(); ?>
 					<a class="button" href="<?php the_permalink(); ?>">Read More</a>
 				</article>
@@ -188,6 +189,8 @@ function menu_feed($number = 6){
 		</section>
 <?php	}//end if have posts 
 }//end menu_feed()
+
+
 
 //Blog Feed loop
 function blog_feed($number = 6){
@@ -205,7 +208,7 @@ function blog_feed($number = 6){
 					<a href="<?php the_permalink(); ?>">
 						<h4><?php the_title( ); ?></h4>
 					</a>
-					<?php the_post_thumbnail('thumbnail' ); ?>
+					<?php the_post_thumbnail('widethumb' ); ?>
 					<?php the_excerpt(); ?>
 					<a class="button" href="<?php the_permalink(); ?>">Read More</a>
 				</article>
@@ -213,8 +216,6 @@ function blog_feed($number = 6){
 		</section>
 <?php	}//end if have posts 
 }//end blog_feed()
-
-
 
 
 

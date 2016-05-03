@@ -102,7 +102,7 @@ function rtb_print_booking_form() {
 
 		<?php
 			$button = sprintf(
-				'<button type="submit">%s</button>',
+				'<button class="button" type="submit">%s</button>',
 				apply_filters( 'rtb_booking_form_submit_label', __( 'Request Booking', 'restaurant-reservations' ) )
 			);
 
@@ -251,9 +251,9 @@ function rtb_print_form_text_field( $slug, $title, $value, $args = array() ) {
 	<div <?php echo rtb_print_element_class( $slug, $classes ); ?>>
 		<?php echo rtb_print_form_error( $slug ); ?>
 		<label for="rtb-<?php echo $slug; ?>">
-			<?php echo $title; ?>
+			<input type="<?php echo $type; ?>"  type="<?php echo $type; ?>" placeholder="<?php echo $title; ?>" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="<?php echo $value; ?>">
+			<span><?php echo $title; ?></span>
 		</label>
-		<input type="<?php echo $type; ?>" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="<?php echo $value; ?>">
 	</div>
 
 	<?php
@@ -279,9 +279,8 @@ function rtb_print_form_textarea_field( $slug, $title, $value, $args = array() )
 	<div <?php echo rtb_print_element_class( $slug, $classes ); ?>>
 		<?php echo rtb_print_form_error( $slug ); ?>
 		<label for="rtb-<?php echo $slug; ?>">
-			<?php echo $title; ?>
-		</label>
 		<textarea name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>"><?php echo $value; ?></textarea>
+		</label>
 	</div>
 
 	<?php
@@ -308,12 +307,12 @@ function rtb_print_form_select_field( $slug, $title, $value, $args ) {
 		<?php echo rtb_print_form_error( $slug ); ?>
 		<label for="rtb-<?php echo $slug; ?>">
 			<?php echo $title; ?>
+			<select name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>">
+				<?php foreach ( $options as $opt_value => $opt_label ) : ?>
+				<option value="<?php echo esc_attr( $opt_value ); ?>" <?php selected( $opt_value, $value ); ?>><?php echo esc_attr( $opt_label ); ?></option>
+				<?php endforeach; ?>
+			</select>
 		</label>
-		<select name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>">
-			<?php foreach ( $options as $opt_value => $opt_label ) : ?>
-			<option value="<?php echo esc_attr( $opt_value ); ?>" <?php selected( $opt_value, $value ); ?>><?php echo esc_attr( $opt_label ); ?></option>
-			<?php endforeach; ?>
-		</select>
 	</div>
 
 	<?php

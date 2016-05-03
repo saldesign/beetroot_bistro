@@ -3,7 +3,35 @@
 <main class="content">
 
 <!-- TO DO: Custom Loop for featured image and content -->
+<?php //featured image and content loop
+$featured_query = new WP_Query(array(
+));
 
+//custom loop
+if($featured_query->have_posts()){ ?> 
+	<div class="header-container"> 
+ 		<header class="banner-header"> <?php 
+ 		while($featured_query-> have_posts()){
+			$featured_query->the_post(); ?>
+			<article id="post-<?php the_ID(); ?>" 
+			<?php post_class('cf'); ?>>	
+
+				<h2 class="entry-title"> 
+					<a class="button" href="<?php the_permalink(); ?>"> 
+						<?php the_title(); ?> 
+					</a>
+				</h2>
+				
+				<div class="entry-content">
+					<?php 
+					the_excerpt();
+					?>
+				</div>						
+			</article><!-- end post -->
+		<?php } ?>
+		</header><!-- end main header -->
+	</div>
+<?php }else{echo "no posts";} ?>
 
 
 
@@ -11,9 +39,6 @@
 	<?php //The Loop
 		if(have_posts()): ?>
 		<?php while(have_posts() ): the_post(); ?>
-
-
-
 			<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
 				<?php the_post_thumbnail('thumbnail'); //don't forget to activate in functions ?> 
 				<h2 class="entry-title">
