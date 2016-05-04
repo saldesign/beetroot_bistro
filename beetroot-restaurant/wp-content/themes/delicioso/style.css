@@ -139,7 +139,9 @@ div.wrapper {
 ==Header
 */
 header[role=banner] {
-  height: 3.75rem; }
+  height: 3.75rem;
+  border-bottom: solid 2px rgba(54, 77, 69, 0.3);
+  background-color: #fffdf7; }
 
 h1.logo {
   width: 60%;
@@ -164,7 +166,9 @@ h1.logo span {
 header a.menu-link {
   float: right;
   font-size: 2rem;
+  height: 3.75rem;
   line-height: 3.75rem;
+  padding: 1rem 3.5rem 0 0;
   width: 3rem;
   text-align: center; }
   @media (min-width: 45em) {
@@ -177,6 +181,7 @@ header nav[role=navigation] ul.nav {
   z-index: 5;
   text-align: center;
   padding-top: 1.25rem;
+  font-weight: 400;
   line-height: 2rem;
   text-transform: uppercase; }
   @media (min-width: 45em) {
@@ -263,7 +268,7 @@ div.header-container {
 header.banner-header {
   position: relative;
   height: 100%;
-  min-height: 12rem;
+  max-height: 12rem;
   max-width: 90rem;
   margin: 0 auto;
   background-position: center 15%;
@@ -271,7 +276,7 @@ header.banner-header {
   color: #fff9e5; }
   @media (min-width: 45em) {
     header.banner-header {
-      min-height: 18rem; } }
+      max-height: 18rem; } }
 
 header.banner-header article.hentry {
   position: absolute;
@@ -318,7 +323,7 @@ ul.quicklinks li {
   margin: 0 auto 1rem; }
   ul.quicklinks li div {
     height: 100%;
-    min-height: 12rem; }
+    max-height: 12rem; }
   @media (min-width: 45em) {
     ul.quicklinks li {
       float: left;

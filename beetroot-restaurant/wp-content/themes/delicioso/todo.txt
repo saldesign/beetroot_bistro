@@ -1,10 +1,14 @@
 
 
+
+
+
+Enqueue CSS
+Meta Boxes
 Basic CSS Framework
 	- Introduce Sass variables, mix ins, nesting, @extend
 Menu Archive Template - Featured Loop
-Enque CSS
-Meta Moxes
+About Template
 Client Input for Quicklinks
 Blog Featured Loop
 Events Archive Link In quicklinks

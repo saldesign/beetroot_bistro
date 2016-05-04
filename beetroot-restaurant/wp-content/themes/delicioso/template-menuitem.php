@@ -1,11 +1,19 @@
 <?php 
+/*
+Template Name: Menu
+*/
+ 
 //edit these to match the stuff you registered in your custom post type plugin
 $post_type = 'menuitem';
 $taxonomy = 'menuitemcat'; ?>
 
 <?php get_header(); ?>
 <main class="content">
+
 <?php         
+
+//TODO Main Loop for featured and content
+
 
 // Gets every term in this taxonomy
 $terms = get_terms( $taxonomy );

@@ -191,8 +191,6 @@ function menu_feed($number = 6){
 wp_reset_postdata();
 }//end menu_feed()
 
-
-
 //Blog Feed loop
 function blog_feed($number = 6){
 	$blogfeed_query = new WP_Query(array(
@@ -218,6 +216,15 @@ function blog_feed($number = 6){
 <?php	}//end if have posts 
 wp_reset_postdata();
 }//end blog_feed()
+
+//featured loop
+function featured_header(){
+	$featuredHeader_query = new WP_Query(array(
+		
+	));
+}
+
+
 
 
 //Blog page info loop
