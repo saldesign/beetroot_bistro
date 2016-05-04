@@ -10,9 +10,9 @@
 			<?php post_class('cf'); ?>>	
 
 				<h2 class="entry-title"> 
-					<a class="button" href="<?php the_permalink(); ?>"> 
+					<span class="button"> 
 						<?php the_title(); ?> 
-					</a>
+					</span>
 				</h2>
 				
 				<div class="entry-content">
@@ -42,11 +42,17 @@
 	<nav class="quicklinks-container">
 	<ul class="quicklinks cf">
 	<?php while($quicklink_query-> have_posts()){
-				$quicklink_query->the_post(); ?>
+				$quicklink_query->the_post(); 
+
+		$imgID = get_post_thumbnail_id($post->ID); //get the id of the featured image
+		$featuredImage = wp_get_attachment_image_src($imgID, 'full' );//get the url of the featured image (returns an array)
+		$imgURL = $featuredImage[0]; //get the url of the image out of the array
+
+
+				?>
 		<li>
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail('quicklink' ); ?>
-			</a>
+				<div style="background:url(<?php echo $imgURL ?>);
+						background-size: cover; ?>');"></div>
 				<h3>
 					<a class="button" href="<?php the_permalink(); ?>">
 						<?php the_title(); ?>

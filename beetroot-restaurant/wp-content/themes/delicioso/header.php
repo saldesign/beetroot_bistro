@@ -48,7 +48,7 @@
 					wp_nav_menu( array(
 							'theme_location' 	=> 'main_menu',					//registered in functions.php
 							'fallback_cb'		=>	'delicioso-menu_fallback',	//fallback function
-							'container' 		=> false,							//no container
+							'container' 		=> false,
 							'menu_class'		=> 'nav',							//<ul class="nav">
 						));
 				 ?>

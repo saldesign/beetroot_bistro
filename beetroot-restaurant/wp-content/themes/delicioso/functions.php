@@ -33,7 +33,7 @@ add_theme_support('title-tag' );
 //special image size for the front page banner
 //						name 			  w    h   crop?
 add_image_size( 'big-banner', 1050, 300, true );
-add_image_size('quicklink', 300, 240, true  );
+add_image_size('quicklink', 300, 200, true  );
 add_image_size('widethumb', 300, 150, true  );
 
 /**
@@ -188,6 +188,7 @@ function menu_feed($number = 6){
 		<?php }//end while have posts ?>
 		</section>
 <?php	}//end if have posts 
+wp_reset_postdata();
 }//end menu_feed()
 
 
@@ -215,20 +216,56 @@ function blog_feed($number = 6){
 		<?php }//end while have posts ?>
 		</section>
 <?php	}//end if have posts 
+wp_reset_postdata();
 }//end blog_feed()
 
 
+//Blog page info loop
+function blog_info(){
+	$page_for_posts = get_option('page_for_posts');
+	$bloginfo_query = new WP_Query(array(
+		'page_id' => $page_for_posts,
+		'post_type'=> 'page',
+	));
+	//custom loop
+	if($bloginfo_query->have_posts()){
+		while($bloginfo_query->have_posts()){
+			$bloginfo_query->the_post();
+			echo $page_for_posts;
+
+		}//end while
+	}//end if 
+	wp_reset_postdata();
+
+}//end blog_info
 
 
 
 
 
 
+/**
+ * Technique for looping through the blog page using options to find the posts page
+ *	Gets post info using get_ method 
+ *	Fails to get content/excerpt, must use custom loop instead
+ */
 
-
-
-
-
+/*
+$page_for_posts = get_option('page_for_posts');
+if( is_home() && $page_for_posts ) :
+  //echo get_the_post_thumbnail($page_for_posts, 'medium');
+$imgID = get_post_thumbnail_id($page_for_posts); //get the id of the featured image
+$featuredImage = wp_get_attachment_image_src($imgID, 'full' );
+$imgURL = $featuredImage[0];
+?>
+<style type="text/css">
+	    .banner-header {
+	         background-image: url(<?php echo $imgURL ?>);
+			}
+</style>
+<?php echo get_the_title($page_for_posts);
+endif;
+*/
 
 
 

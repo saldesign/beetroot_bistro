@@ -90,7 +90,7 @@ $basePadding:1rem;
     @media (min-width:60em){@content;}
   }
   @if $point == medium {
-    @media (min-width:40em){@content;}
+    @media (min-width:45em){@content;}
   }
   @if $point == small {
     @media (min-width:20em){@content;}
@@ -180,7 +180,7 @@ body {
           border: solid 2px $tan;
           background-color: $green;
           color: $tan;
-          box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.6); 
+          box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.6); 
           text-shadow: 0px 0px 3px rgba(255,255,255,0.3);
           @include transition(500ms);
         }
@@ -190,6 +190,7 @@ body {
           font-size: $headingSize;
           line-height: $headingLineHeight + .75rem;
           font-weight: $OswaldRegular;
+
         }
         h3 .button{
           font-size: $headingSize - .5rem;
@@ -216,8 +217,12 @@ header[role=banner] {
 
   h1.logo {
     width: 60%;
-    min-width: 11.5rem;
+    min-width: 12.1rem;
     float: left; 
+
+    @include breakpoint(medium){
+      width:30%;
+    }
   }
       h1.logo a {
         width: 100%;
@@ -238,15 +243,27 @@ header[role=banner] {
     line-height: 3.75rem;
     width: 3rem;
     text-align: center; 
+
+    @include breakpoint(medium){
+      display: none;
+    }
   }
 
   header nav[role=navigation] ul.nav {
     position: absolute;
     top: -3000%;
-    z-index: 2;
+    z-index: 5;
     text-align: center;
-    line-height: 3.75rem;
+    padding-top:1.25rem;
+    line-height: 2rem;
     text-transform: uppercase; 
+
+    @include breakpoint(medium){
+      position: static;
+      float: right;
+      width: 28.5rem;
+    }
+
   }
     header nav[role=navigation].active ul.nav {
       position: absolute;
@@ -256,16 +273,21 @@ header[role=banner] {
       bottom: 0;
       background-color: #fff;
       font-size: 1.125rem;
-      line-height: 1.75rem;
       font-family: 'Oswald';
       font-weight: 400;
       letter-spacing: .125rem; 
+
     }
 
       header nav[role=navigation] ul.nav a {
         display: inline-block;
         padding: .5rem 3rem;
         @include transition(600ms);
+        @include breakpoint(medium){
+          float: left;
+          padding:0 .5rem;
+          margin:0 .25rem;
+        }
       
         &:after {
           content: "";
@@ -286,13 +308,20 @@ header[role=banner] {
           color: white;
           background-color:$green;
           border: solid 2px transparent;
+          padding-bottom: 0;
+          padding-top: .125rem;
           @include border-radius(.25rem);
-
+          @include breakpoint(medium){
+            margin-top: -0.25rem;
+          }
           &:hover{
-            border: solid 2px $green;
+            border: 2px solid $green;
             background-color: $tan;
             color: $green;
             @include transition(300ms);
+          }
+          &:after{
+            height: 0;
           }
         }
 
@@ -302,37 +331,54 @@ header[role=banner] {
 div.header-container{
   background-color:$darkTan;
   padding: 1rem $basePadding 6rem;
+
+  @include breakpoint(medium){
+    padding-bottom: $basePadding;
+  }
 }
   header.banner-header{
     position: relative;
     height: 100%;
     min-height: 12rem;
+    max-width: 90rem;
     margin: 0 auto;
     background-position: center 15%;
     background-size: cover;
     color: $tan;
     @extend .fat-bb;
+
+    @include breakpoint(medium){
+      min-height: 18rem;
+    }
   }
     header.banner-header article.hentry{
       position: absolute;
       bottom: -5rem;
+
+      @include breakpoint(medium){
+        max-width: 30rem;
+        left:1.5rem;
+        bottom:0;
+      }
     }
       header.banner-header article.hentry h2{
         background-color: $green;
-        padding: 10px 6px 8px;
+        padding: 6px;
         display: inline-block;
         position: relative;
         top: 1rem;
         left: 1.5rem;
+
+        .button{
+          @extend .button:hover;
+          cursor:default;
+        }
       }
       header.banner-header article.hentry div.entry-content{
         background-color:$green;
         padding: $basePadding .75rem .25rem;
       }
 
-      .header-container .button{
-          
-      }
 
 /*
 ==Quicklinks
@@ -352,33 +398,35 @@ nav.quicklinks-container{
   }
 }
   ul.quicklinks li{
-    max-width: 27rem;
+    max-width: 30rem;
     margin: 0 auto 1rem;
 
-    &:first-child{
-      padding-right:1rem;
-    }
-    &:last-child{
-      padding-left:1rem;
+    div {
+      height: 100%;
+      min-height: 12rem;
     }
 
     @include breakpoint(medium){
+      &:first-child{
+        padding-right:1rem;
+      }
+      &:last-child{
+        padding-left:1rem;
+      }
       float: left;
       width:33.33%;
     }
 
-
-    img{
-      max-width: 27rem;
-      width: 100%;
-    }
     h3{
       background-color: $green;
       padding: 4px;
       display: inline-block;
       position: relative;
       top: -2.25rem;
-      left: 1.5rem;
+      left: 1rem;
+      @include breakpoint(large){
+        left: 1.5rem;
+      }
     }
   }
 
@@ -397,7 +445,21 @@ nav.quicklinks-container{
 */
 
 form {
-  
+  div.rtb-text.date {
+    float: left;
+    width: 50%;
+    padding-right: 1rem;
+  }
+  div.rtb-text.time {
+    float: right;
+    width: 50%;
+    padding-left: 1rem;
+  }
+  div.rtb-text.date {
+    float: left;
+    width: 50%;
+    padding-right: 1rem;
+  }
   label {
     position: relative;
     display: block;
@@ -408,7 +470,7 @@ form {
       display: block;
       border: none;
       padding: 20px;
-      width: 300px;
+      width: 100%;
       margin-bottom: 20px;
       font-size: 18px;
       outline: none;
@@ -479,7 +541,10 @@ main.content{
 main .hentry {
   margin-bottom: 3rem; 
 }
-
+main.content .button:hover,
+main.content .button:focus{
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3); 
+}
 img{
   max-width: 100%;
   height: auto;

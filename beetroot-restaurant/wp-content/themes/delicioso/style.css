@@ -107,11 +107,11 @@ header a.menu-link:focus {
   letter-spacing: .25rem;
   text-shadow: rgba(155, 155, 155, 0.5) 0px 1px 3px;
   cursor: pointer; }
-  .button:hover, .button:focus {
+  .button:hover, header.banner-header article.hentry h2 .button, .button:focus {
     border: solid 2px #fff9e5;
     background-color: #42a685;
     color: #fff9e5;
-    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.6);
     text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
     -webkit-transition: all 500ms ease-out;
     -moz-transition: all 500ms ease-out;
@@ -143,8 +143,11 @@ header[role=banner] {
 
 h1.logo {
   width: 60%;
-  min-width: 11.5rem;
+  min-width: 12.1rem;
   float: left; }
+  @media (min-width: 45em) {
+    h1.logo {
+      width: 30%; } }
 
 h1.logo a {
   width: 100%;
@@ -164,14 +167,23 @@ header a.menu-link {
   line-height: 3.75rem;
   width: 3rem;
   text-align: center; }
+  @media (min-width: 45em) {
+    header a.menu-link {
+      display: none; } }
 
 header nav[role=navigation] ul.nav {
   position: absolute;
   top: -3000%;
-  z-index: 2;
+  z-index: 5;
   text-align: center;
-  line-height: 3.75rem;
+  padding-top: 1.25rem;
+  line-height: 2rem;
   text-transform: uppercase; }
+  @media (min-width: 45em) {
+    header nav[role=navigation] ul.nav {
+      position: static;
+      float: right;
+      width: 28.5rem; } }
 
 header nav[role=navigation].active ul.nav {
   position: absolute;
@@ -181,7 +193,6 @@ header nav[role=navigation].active ul.nav {
   bottom: 0;
   background-color: #fff;
   font-size: 1.125rem;
-  line-height: 1.75rem;
   font-family: 'Oswald';
   font-weight: 400;
   letter-spacing: .125rem; }
@@ -194,6 +205,11 @@ header nav[role=navigation] ul.nav a {
   -ms-transition: all 600ms ease-out;
   -o-transition: all 600ms ease-out;
   transition: all 600ms ease-out; }
+  @media (min-width: 45em) {
+    header nav[role=navigation] ul.nav a {
+      float: left;
+      padding: 0 .5rem;
+      margin: 0 .25rem; } }
   header nav[role=navigation] ul.nav a:after {
     content: "";
     display: block;
@@ -213,12 +229,17 @@ header nav[role=navigation] ul.nav li:last-child a {
   color: white;
   background-color: #42a685;
   border: solid 2px transparent;
+  padding-bottom: 0;
+  padding-top: .125rem;
   -webkit-border-radius: 0.25rem;
   border-radius: 0.25rem;
   background-clip: padding-box;
   /* stops bg color from leaking outside the border: */ }
+  @media (min-width: 45em) {
+    header nav[role=navigation] ul.nav li:last-child a {
+      margin-top: -0.25rem; } }
   header nav[role=navigation] ul.nav li:last-child a:hover {
-    border: solid 2px #42a685;
+    border: 2px solid #42a685;
     background-color: #fff9e5;
     color: #42a685;
     -webkit-transition: all 300ms ease-out;
@@ -226,6 +247,8 @@ header nav[role=navigation] ul.nav li:last-child a {
     -ms-transition: all 300ms ease-out;
     -o-transition: all 300ms ease-out;
     transition: all 300ms ease-out; }
+  header nav[role=navigation] ul.nav li:last-child a:after {
+    height: 0; }
 
 /*
 ==headerBanner
@@ -233,27 +256,41 @@ header nav[role=navigation] ul.nav li:last-child a {
 div.header-container {
   background-color: #e6d5a1;
   padding: 1rem 1rem 6rem; }
+  @media (min-width: 45em) {
+    div.header-container {
+      padding-bottom: 1rem; } }
 
 header.banner-header {
   position: relative;
   height: 100%;
   min-height: 12rem;
+  max-width: 90rem;
   margin: 0 auto;
   background-position: center 15%;
   background-size: cover;
   color: #fff9e5; }
+  @media (min-width: 45em) {
+    header.banner-header {
+      min-height: 18rem; } }
 
 header.banner-header article.hentry {
   position: absolute;
   bottom: -5rem; }
+  @media (min-width: 45em) {
+    header.banner-header article.hentry {
+      max-width: 30rem;
+      left: 1.5rem;
+      bottom: 0; } }
 
 header.banner-header article.hentry h2 {
   background-color: #42a685;
-  padding: 10px 6px 8px;
+  padding: 6px;
   display: inline-block;
   position: relative;
   top: 1rem;
   left: 1.5rem; }
+  header.banner-header article.hentry h2 .button {
+    cursor: default; }
 
 header.banner-header article.hentry div.entry-content {
   background-color: #42a685;
@@ -277,26 +314,29 @@ nav.quicklinks-container {
     color: #e6b217; }
 
 ul.quicklinks li {
-  max-width: 27rem;
+  max-width: 30rem;
   margin: 0 auto 1rem; }
-  ul.quicklinks li:first-child {
-    padding-right: 1rem; }
-  ul.quicklinks li:last-child {
-    padding-left: 1rem; }
-  @media (min-width: 40em) {
+  ul.quicklinks li div {
+    height: 100%;
+    min-height: 12rem; }
+  @media (min-width: 45em) {
     ul.quicklinks li {
       float: left;
-      width: 33.33%; } }
-  ul.quicklinks li img {
-    max-width: 27rem;
-    width: 100%; }
+      width: 33.33%; }
+      ul.quicklinks li:first-child {
+        padding-right: 1rem; }
+      ul.quicklinks li:last-child {
+        padding-left: 1rem; } }
   ul.quicklinks li h3 {
     background-color: #42a685;
     padding: 4px;
     display: inline-block;
     position: relative;
     top: -2.25rem;
-    left: 1.5rem; }
+    left: 1rem; }
+    @media (min-width: 60em) {
+      ul.quicklinks li h3 {
+        left: 1.5rem; } }
 
 /*
 ==Booking
@@ -308,6 +348,18 @@ ul.quicklinks li {
 /*
 ==Forms
 */
+form div.rtb-text.date {
+  float: left;
+  width: 50%;
+  padding-right: 1rem; }
+form div.rtb-text.time {
+  float: right;
+  width: 50%;
+  padding-left: 1rem; }
+form div.rtb-text.date {
+  float: left;
+  width: 50%;
+  padding-right: 1rem; }
 form label {
   position: relative;
   display: block; }
@@ -317,7 +369,7 @@ form label {
     display: block;
     border: none;
     padding: 20px;
-    width: 300px;
+    width: 100%;
     margin-bottom: 20px;
     font-size: 18px;
     outline: none;
@@ -357,13 +409,17 @@ form input[type="submit"] {
 */
 main.content {
   padding: 1rem; }
-  @media (min-width: 40em) {
+  @media (min-width: 45em) {
     main.content {
       float: left;
       width: 70%; } }
 
 main .hentry {
   margin-bottom: 3rem; }
+
+main.content .button:hover, main.content header.banner-header article.hentry h2 .button, header.banner-header article.hentry h2 main.content .button,
+main.content .button:focus {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3); }
 
 img {
   max-width: 100%;
@@ -375,7 +431,7 @@ img {
 aside.sidebar {
   background-color: #fff9e5;
   padding: 1rem; }
-  @media (min-width: 40em) {
+  @media (min-width: 45em) {
     aside.sidebar {
       float: right;
       width: 30%; } }

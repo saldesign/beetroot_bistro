@@ -1,7 +1,19 @@
-Add Custom Single Page Template
 
 
-
+Basic CSS Framework
+	- Introduce Sass variables, mix ins, nesting, @extend
+Menu Archive Template - Featured Loop
+Enque CSS
+Meta Moxes
+Client Input for Quicklinks
+Blog Featured Loop
+Events Archive Link In quicklinks
+JQ Menu - Fix Script, Add Burger Expand
+Peeky Placeholders
+Sticky Nav
+Slider 
+Footer - placeholders
+  
 Menu
 	Order by category_id meta box
 		Filter/Query by Meta value - when items shouldn't be sorted by date or name 
@@ -10,15 +22,7 @@ Menu
 
 About
 	Add Some Custom Meta boxes to this page.
-
-Basic CSS - Introduce Sass variables, mix ins, nesting, @extend
-	Header Nav - Code Pen (hamburger animation)
-	Text Formatting
-	Layout
-	Grid Responsive 
-Footer - placeholders
-  
-
+	Contact form
 
 
 
