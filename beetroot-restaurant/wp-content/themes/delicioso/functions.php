@@ -154,7 +154,14 @@ function awesome_widget_areas(){
 }
 
 
+/**
+ * Add excerpt support to pages
+ */
 
+add_action('init', 'page_excerpts');
+function page_excerpts(){
+	add_post_type_support('page', 'excerpt' );
+}
 
 
 

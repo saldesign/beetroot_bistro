@@ -443,19 +443,19 @@ form.mc4wp-form input[type="submit"] {
 /*
 ==MainContent
 */
-main.content {
-  padding: 1rem;
+main.content div.main.container {
   max-width: 60rem;
   margin-left: auto;
-  margin-right: auto; }
-  @media (min-width: 45em) {
-    main.content section.blog-feed {
-      float: right;
-      width: 33.33%; } }
-  @media (min-width: 45em) {
-    main.content section.menu-feed {
-      float: left;
-      width: 66.66%; } }
+  margin-right: auto;
+  padding: 1rem; }
+@media (min-width: 45em) {
+  main.content section.blog-feed {
+    float: right;
+    width: 33.33%; } }
+@media (min-width: 45em) {
+  main.content section.menu-feed {
+    float: left;
+    width: 66.66%; } }
 
 main .hentry {
   margin-bottom: 3rem; }

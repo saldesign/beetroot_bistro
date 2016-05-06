@@ -40,35 +40,19 @@ $taxonomy = 'menuitemcat'; ?>
 <?php endif;  //end THE LOOP ?>
 
 <main class="content">
-<?php         
-// Gets every term in this taxonomy
-$terms = get_terms( $taxonomy );
-
-//go through each term in this taxonomy one at a time
-foreach( $terms as $term ) : 
-
-    //get ONE post assigned to this term
-    $custom_loop = new WP_Query( array(
-        'post_type' => $post_type,
-        'taxonomy' => $taxonomy,
-        'term' => $term->slug,
-        ) );
-    
-    //LOOP
-    if( $custom_loop->have_posts() ): ?>
-    <h2><?php echo $term->name; ?></h2>
+    <div class="main container">
+        <?php the_content( ); ?>
+    </div>
+<?php
+if(is_page(1719)){
+    ?>
+    <div class="booking container">
+        <?php dynamic_sidebar('booking-sidebar'); //add booking widget area ?>
+    </div>
     <?php
-        while( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
-<article>
-    <h3><?php the_title(); ?></h3>
-    <p><?php the_content( ); ?></p>
-    <?php the_post_thumbnail(); ?>
-</article>
-
-<?php 
-        endwhile; 
-    endif;
-endforeach;
+}
 ?>
+
+ 
 </main>
 <?php get_footer() ?>

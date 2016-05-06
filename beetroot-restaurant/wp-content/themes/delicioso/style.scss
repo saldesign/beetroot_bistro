@@ -280,6 +280,8 @@ header[role=banner] {
 
   }
     header nav[role=navigation].active ul.nav {
+      //maxwidth
+      //texalign right
       position: absolute;
       top: 3.75rem;
       right: 0;
@@ -292,7 +294,7 @@ header[role=banner] {
       letter-spacing: .125rem; 
 
     }
-
+      //list items inline block
       header nav[role=navigation] ul.nav a {
         display: inline-block;
         padding: .5rem 3rem;
@@ -551,8 +553,11 @@ form.mc4wp-form {
 ==MainContent
 */
 main.content{
-  padding:$basePadding;
-  @include MWcenter;
+  div.main.container{
+    @include MWcenter;
+    padding:$basePadding;
+
+  }
   section.blog-feed{
     @include breakpoint(medium){
       float: right;
