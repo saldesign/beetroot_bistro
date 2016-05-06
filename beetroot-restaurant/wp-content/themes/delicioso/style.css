@@ -514,7 +514,8 @@ aside.sidebar {
 */
 footer {
   background-color: #fff9e5;
-  clear: both; }
+  clear: both;
+  line-height: 1.75rem; }
   footer h2, footer .widget_nav_menu h3 {
     font-weight: 400;
     font-size: 1.75rem; }

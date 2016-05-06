@@ -1,37 +1,26 @@
 
 
 Questions:
-Menu order css alignment issue
-
-Style Menu item list
-		Footer
-		Posts
-Meta Boxes
-Reserve Template
+	Menu order css alignment issue
 About Template		
-
-
+Reserve Template
+Meta Boxes
+Fixed Order Delivery Bar or button
+CSS
+	On Page Nav - Footer/Header
+	About 
 Enqueue CSS
 Client Input for Quicklinks
-Blog Featured Loop
-Events Archive Link In quicklinks
+Events turn on
 JQ Menu - Fix Script, Add Burger Expand
-Peeky Placeholders
 Sticky Nav
-Slider 
-Footer - placeholders
   
+
 Menu
 	Order by category_id meta box
 		Filter/Query by Meta value - when items shouldn't be sorted by date or name 
 		https://app.pluralsight.com/player?course=custom-content-types-code-like-wordpress-ninja&author=chris-reynolds&name=custom-content-types-code-like-wordpress-ninja-02&clip=2&mode=live
 		1:00
-
-About
-	Add Some Custom Meta boxes to this page.
-	Contact form
-
-
 
   Sass in Terminal
 

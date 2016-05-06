@@ -642,6 +642,7 @@ aside.sidebar{
 footer{
   background-color:$tan;
   clear:both;
+  line-height: $baseLineHeight;
   h2,.widget_nav_menu h3{
     font-weight: $OswaldRegular;
     font-size: $headingSize - .25rem;
