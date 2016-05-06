@@ -68,8 +68,9 @@
 	</nav>
 <?php	}//end if have posts ?>
 
-<?php dynamic_sidebar('booking-sidebar'); //add booking widget area ?>
-
+<div class="booking container">
+	<?php dynamic_sidebar('booking-sidebar'); //add booking widget area ?>
+</div>
 <main class="content">
 <?php menu_feed(); ?>
 <?php blog_feed(); ?>

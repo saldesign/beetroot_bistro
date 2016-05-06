@@ -8,13 +8,39 @@ $post_type = 'menuitem';
 $taxonomy = 'menuitemcat'; ?>
 
 <?php get_header(); ?>
+
+<?php //THE LOOP
+    if( have_posts() ): ?>
+    <?php while( have_posts() ): the_post(); ?>
+
+    <div class="header-container">
+        <header class="banner-header">
+            <article id="post-<?php the_ID(); ?>" 
+            <?php post_class('cf'); ?>> 
+
+                <h2 class="entry-title"> 
+                    <span class="button"> 
+                        <?php the_title(); ?> 
+                    </span>
+                </h2>
+                
+                <div class="entry-content">
+                    <?php 
+                    the_excerpt();
+                    ?>
+                </div>
+                        
+            </article><!-- end post -->
+        </header><!-- end main header -->
+    </div>
+    <?php endwhile; ?>
+<?php else: ?>
+<h2>Sorry, no posts found</h2>
+<p>Try using the search bar instead</p>
+<?php endif;  //end THE LOOP ?>
+
 <main class="content">
-
 <?php         
-
-//TODO Main Loop for featured and content
-
-
 // Gets every term in this taxonomy
 $terms = get_terms( $taxonomy );
 
@@ -33,9 +59,11 @@ foreach( $terms as $term ) :
     <h2><?php echo $term->name; ?></h2>
     <?php
         while( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
-<article>
-    <h3><?php the_title(); ?></h3>
-    <p><?php the_content( ); ?></p>
+<article class="cf">
+    <div>
+        <h3><?php the_title(); ?></h3>
+        <?php the_content( ); ?>
+    </div>
     <?php the_post_thumbnail(); ?>
 </article>
 
@@ -45,5 +73,4 @@ foreach( $terms as $term ) :
 endforeach;
 ?>
 </main>
-<?php get_sidebar() ?>
 <?php get_footer() ?>

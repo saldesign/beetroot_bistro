@@ -92,7 +92,7 @@ a:active,
 header a.menu-link:focus {
   color: #e6b217; }
 
-.button {
+.button, #button {
   font-family: 'Oswald';
   text-align: center;
   line-height: 2rem;
@@ -107,7 +107,7 @@ header a.menu-link:focus {
   letter-spacing: .25rem;
   text-shadow: rgba(155, 155, 155, 0.5) 0px 1px 3px;
   cursor: pointer; }
-  .button:hover, header.banner-header article.hentry h2 .button, .button:focus {
+  .button:hover, header.banner-header article.hentry h2 .button, .button:focus, #button:hover, #button:focus {
     border: solid 2px #fff9e5;
     background-color: #42a685;
     color: #fff9e5;
@@ -119,12 +119,14 @@ header a.menu-link:focus {
     -o-transition: all 500ms ease-out;
     transition: all 500ms ease-out; }
 
-h2 .button {
+h2 .button,
+h2 #button {
   font-size: 2rem;
   line-height: 2.75rem;
   font-weight: 400; }
 
-h3 .button {
+h3 .button,
+h3 #button {
   font-size: 1.5rem;
   line-height: 2.5rem; }
 
@@ -142,6 +144,11 @@ header[role=banner] {
   height: 3.75rem;
   border-bottom: solid 2px rgba(54, 77, 69, 0.3);
   background-color: #fffdf7; }
+
+nav.main-nav {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto; }
 
 h1.logo {
   width: 60%;
@@ -269,8 +276,9 @@ header.banner-header {
   position: relative;
   height: 100%;
   max-height: 12rem;
-  max-width: 90rem;
-  margin: 0 auto;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
   background-position: center 15%;
   background-size: cover;
   color: #fff9e5; }
@@ -315,6 +323,10 @@ nav.quicklinks-container {
     -ms-transition: all 300ms ease-out;
     -o-transition: all 300ms ease-out;
     transition: all 300ms ease-out; }
+  nav.quicklinks-container ul {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto; }
   nav.quicklinks-container a:hover p {
     color: #e6b217; }
 
@@ -346,29 +358,38 @@ ul.quicklinks li {
 /*
 ==Booking
 */
-.widget_rtb_booking_form_widget {
+div.booking.container {
   padding: 1rem;
   background: url(images/pattern.png); }
+  div.booking.container section {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto; }
 
 /*
 ==Forms
 */
-form div.rtb-text.date {
+form div.rtb-text.date,
+form.mc4wp-form div.rtb-text.date {
   float: left;
   width: 50%;
   padding-right: 1rem; }
-form div.rtb-text.time {
+form div.rtb-text.time,
+form.mc4wp-form div.rtb-text.time {
   float: right;
   width: 50%;
   padding-left: 1rem; }
-form div.rtb-text.date {
+form div.rtb-text.date,
+form.mc4wp-form div.rtb-text.date {
   float: left;
   width: 50%;
   padding-right: 1rem; }
-form label {
+form label,
+form.mc4wp-form label {
   position: relative;
   display: block; }
-  form label input {
+  form label input,
+  form.mc4wp-form label input {
     font: 18px Helvetica, Arial, sans-serif;
     box-sizing: border-box;
     display: block;
@@ -379,19 +400,27 @@ form label {
     font-size: 18px;
     outline: none;
     transition: all 0.2s ease-in-out; }
-    form label input::placeholder {
+    form label input::placeholder,
+    form.mc4wp-form label input::placeholder {
       transition: all 0.2s ease-in-out;
       color: #999;
       font: 18px Helvetica, Arial, sans-serif; }
-    form label input:focus, form label input.populated {
+    form label input:focus, form label input.populated,
+    form.mc4wp-form label input:focus,
+    form.mc4wp-form label input.populated {
       padding-top: 28px;
       padding-bottom: 12px; }
-      form label input:focus::placeholder, form label input.populated::placeholder {
+      form label input:focus::placeholder, form label input.populated::placeholder,
+      form.mc4wp-form label input:focus::placeholder,
+      form.mc4wp-form label input.populated::placeholder {
         color: transparent; }
-      form label input:focus + span, form label input.populated + span {
+      form label input:focus + span, form label input.populated + span,
+      form.mc4wp-form label input:focus + span,
+      form.mc4wp-form label input.populated + span {
         opacity: 1;
         top: 10px; }
-  form label span {
+  form label span,
+  form.mc4wp-form label span {
     color: #35dc9b;
     font: 13px Helvetica, Arial, sans-serif;
     position: absolute;
@@ -399,25 +428,34 @@ form label {
     left: 20px;
     opacity: 0;
     transition: all 0.2s ease-in-out; }
-form input[type="submit"] {
+form input[type="submit"],
+form.mc4wp-form input[type="submit"] {
   transition: all 0.2s ease-in-out;
   font: 18px Helvetica, Arial, sans-serif;
   border: none;
   background: #1aaf75;
   color: #fff;
   padding: 16px 40px; }
-  form input[type="submit"]:hover {
+  form input[type="submit"]:hover,
+  form.mc4wp-form input[type="submit"]:hover {
     background: #109f67; }
 
 /*
 ==MainContent
 */
 main.content {
-  padding: 1rem; }
+  padding: 1rem;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto; }
   @media (min-width: 45em) {
-    main.content {
+    main.content section.blog-feed {
+      float: right;
+      width: 33.33%; } }
+  @media (min-width: 45em) {
+    main.content section.menu-feed {
       float: left;
-      width: 70%; } }
+      width: 66.66%; } }
 
 main .hentry {
   margin-bottom: 3rem; }
@@ -426,9 +464,39 @@ main.content .button:hover, main.content header.banner-header article.hentry h2 
 main.content .button:focus {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3); }
 
+main.content #button:hover,
+main.content #button:focus {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3); }
+
 img {
   max-width: 100%;
   height: auto; }
+
+body.page-template-template-menuitem main h2 {
+  text-align: center;
+  font-size: 2.125rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  margin: 2rem 0 1rem;
+  position: relative; }
+  body.page-template-template-menuitem main h2:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-bottom: dotted 1px #42a685; }
+body.page-template-template-menuitem main h3 {
+  font-size: 1.875rem;
+  line-height: 1.875rem; }
+body.page-template-template-menuitem main article div {
+  float: right;
+  width: 66.66%;
+  padding-left: 1rem; }
+body.page-template-template-menuitem main img {
+  float: left;
+  width: 33.33%; }
 
 /*
 ==Sidebar
@@ -447,20 +515,39 @@ aside.sidebar {
 footer {
   background-color: #fff9e5;
   clear: both; }
-
-footer > section {
-  padding: 1rem; }
-
-footer section.widget_mc4wp_form_widget,
-footer section.widget_mc4wp_form_widget h3 {
-  background-color: #42a685;
-  color: #fff9e5; }
-
-footer section.contact,
-footer section.contact h3,
-footer section.contact h2 {
-  background-color: #4d4536;
-  color: #fff9e5; }
+  footer h2, footer .widget_nav_menu h3 {
+    font-weight: 400;
+    font-size: 1.75rem; }
+  footer h3 {
+    color: #4d4536; }
+  footer section {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem; }
+  footer div.newsletter {
+    background-color: #42a685; }
+    footer div.newsletter h2, footer div.newsletter h3, footer div.newsletter p {
+      color: #fff9e5; }
+  footer div.contact {
+    background-color: #4d4536;
+    color: #fff9e5; }
+    footer div.contact div {
+      padding: .75rem 0; }
+    footer div.contact h2, footer div.contact h3, footer div.contact p, footer div.contact li {
+      color: #fff9e5; }
+    footer div.contact h3 {
+      font-size: 1.5rem;
+      padding-left: 1rem; }
+    footer div.contact ul {
+      padding-left: 1.5rem; }
+  footer section.widget_nav_menu ul {
+    font-family: 'Oswald';
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    text-transform: uppercase;
+    letter-spacing: .125rem;
+    padding-left: 1rem; }
 
 /*
 ==Media Queries

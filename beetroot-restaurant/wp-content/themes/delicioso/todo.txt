@@ -1,14 +1,17 @@
 
 
+Questions:
+Menu order css alignment issue
 
+Style Menu item list
+		Footer
+		Posts
+Meta Boxes
+Reserve Template
+About Template		
 
 
 Enqueue CSS
-Meta Boxes
-Basic CSS Framework
-	- Introduce Sass variables, mix ins, nesting, @extend
-Menu Archive Template - Featured Loop
-About Template
 Client Input for Quicklinks
 Blog Featured Loop
 Events Archive Link In quicklinks
