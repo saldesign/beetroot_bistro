@@ -186,16 +186,21 @@ header nav[role=navigation] ul.nav {
   position: absolute;
   top: -3000%;
   z-index: 5;
-  text-align: center;
-  padding-top: 1.25rem;
+  padding-top: 1rem;
   font-weight: 400;
   line-height: 2rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  text-align: right;
+  max-width: 40rem; }
   @media (min-width: 45em) {
     header nav[role=navigation] ul.nav {
       position: static;
-      float: right;
-      width: 28.5rem; } }
+      float: right; } }
+  header nav[role=navigation] ul.nav li {
+    text-align: center; }
+    @media (min-width: 45em) {
+      header nav[role=navigation] ul.nav li {
+        display: inline; } }
 
 header nav[role=navigation].active ul.nav {
   position: absolute;
@@ -211,7 +216,7 @@ header nav[role=navigation].active ul.nav {
 
 header nav[role=navigation] ul.nav a {
   display: inline-block;
-  padding: .5rem 3rem;
+  padding: .5rem 1rem;
   -webkit-transition: all 600ms ease-out;
   -moz-transition: all 600ms ease-out;
   -ms-transition: all 600ms ease-out;
@@ -219,7 +224,6 @@ header nav[role=navigation] ul.nav a {
   transition: all 600ms ease-out; }
   @media (min-width: 45em) {
     header nav[role=navigation] ul.nav a {
-      float: left;
       padding: 0 .5rem;
       margin: 0 .25rem; } }
   header nav[role=navigation] ul.nav a:after {

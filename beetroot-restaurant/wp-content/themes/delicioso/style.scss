@@ -266,22 +266,25 @@ header[role=banner] {
     position: absolute;
     top: -3000%;
     z-index: 5;
-    text-align: center;
-    padding-top:1.25rem;
+    padding-top:1rem;
     font-weight: $OswaldRegular;
     line-height: 2rem;
     text-transform: uppercase; 
-
+    text-align: right;
+    max-width: 40rem;
     @include breakpoint(medium){
       position: static;
       float: right;
-      width: 28.5rem;
+    }
+    li{
+      @include breakpoint(medium){
+        display: inline;
+      }
+      text-align: center;
     }
 
   }
     header nav[role=navigation].active ul.nav {
-      //maxwidth
-      //texalign right
       position: absolute;
       top: 3.75rem;
       right: 0;
@@ -292,15 +295,13 @@ header[role=banner] {
       font-family: 'Oswald';
       font-weight: 400;
       letter-spacing: .125rem; 
-
     }
       //list items inline block
       header nav[role=navigation] ul.nav a {
-        display: inline-block;
-        padding: .5rem 3rem;
+        display:inline-block;
+          padding:.5rem 1rem;
         @include transition(600ms);
         @include breakpoint(medium){
-          float: left;
           padding:0 .5rem;
           margin:0 .25rem;
         }
