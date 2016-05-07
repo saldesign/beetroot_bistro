@@ -61,9 +61,11 @@ $taxonomy = 'menuitemcat'; ?>
         <?php
             while( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
     <article class="cf">
-        <div>
-            <h3><?php the_title(); ?></h3>
-            <?php the_content( ); ?>
+        <div class="content cf">
+            <div>
+                <h3><?php the_title(); ?></h3>
+                <?php the_content( ); ?>
+            </div>
             <?php //get the 'Price' custom field
             //                      post ID , field name , single?
             $price = get_post_meta( $post->ID, 'Price', true );
@@ -71,7 +73,7 @@ $taxonomy = 'menuitemcat'; ?>
             <span class="price"><?php echo $price; ?></span>
             <?php } //end if price ?>
         </div>
-        <?php the_post_thumbnail(); ?>
+        <div class="thumb"><?php the_post_thumbnail(); ?></div>
     </article>
 
     <?php 

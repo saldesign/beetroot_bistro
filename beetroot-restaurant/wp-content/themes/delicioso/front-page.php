@@ -71,12 +71,12 @@
 <div class="booking container">
 	<?php dynamic_sidebar('booking-sidebar'); //add booking widget area ?>
 </div>
-<main class="content">
+<!-- <main class="content">
 	<div class="main container">
 		<?php menu_feed(); ?>
-<!-- 		<?php blog_feed(); ?>
- -->	</div>
-</main> <!-- end #content -->
+		<?php blog_feed(); ?>
+ 	</div>
+</main>  --><!-- end #content -->
 <?php get_footer(); //include footer.php ?>
 
 

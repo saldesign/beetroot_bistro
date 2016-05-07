@@ -183,14 +183,18 @@ function menu_feed($number = 6){
 		<?php while($menuitem_query->have_posts()){
 					$menuitem_query->the_post(); ?>
 				<article class="hentry">
-					<a href="<?php the_permalink(); ?>">
-						<h4><?php the_title( ); ?></h4>
-					</a>
-					<?php the_terms( get_the_id(), 'menuitemcat', '<p>','', '</p>' ); ?>
+					<h4><?php the_title( ); ?></h4>
+					<ul>
+					<?php 
+					$terms_as_text = strip_tags( get_the_term_list( get_the_id(), 'menuitemcat', '<li>', ', ', '</li>' ) );
+					echo $terms_as_text;
+					?>
+					</ul>
+
 					
 					<?php the_post_thumbnail('medium' ); ?>
 					<?php the_excerpt(); ?>
-					<a class="button" href="<?php the_permalink(); ?>">Read More</a>
+					<a class="button" href="<?php echo get_page_link(1802); ?>">Read More</a>
 				</article>
 		<?php }//end while have posts ?>
 		</section>
