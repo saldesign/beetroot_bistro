@@ -192,11 +192,11 @@ header nav[role=navigation] ul.nav {
   font-weight: 400;
   line-height: 2rem;
   text-transform: uppercase;
-  text-align: right;
-  max-width: 40rem; }
+  text-align: right; }
   @media (min-width: 45em) {
     header nav[role=navigation] ul.nav {
       position: static;
+      max-width: 40rem;
       float: right; } }
   header nav[role=navigation] ul.nav li {
     text-align: center; }
@@ -313,7 +313,7 @@ div.header-container {
 header.banner-header {
   position: relative;
   height: 100%;
-  max-height: 12rem;
+  min-height: 12rem;
   max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
@@ -322,7 +322,7 @@ header.banner-header {
   color: #fff9e5; }
   @media (min-width: 45em) {
     header.banner-header {
-      max-height: 18rem; } }
+      min-height: 18rem; } }
 
 header.banner-header article.hentry {
   position: absolute;
@@ -373,7 +373,7 @@ ul.quicklinks li {
   margin: 0 auto 1rem; }
   ul.quicklinks li div {
     height: 100%;
-    max-height: 12rem; }
+    min-height: 12rem; }
   @media (min-width: 45em) {
     ul.quicklinks li {
       float: left;
@@ -526,7 +526,7 @@ main.content #button:hover,
 main.content #button:focus {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3); }
 
-main h2, main, h3, main h4, main h5, main h6 {
+main h2, main h3, main h4, main h5, main h6 {
   margin: 0.5rem 0; }
 
 main p {
@@ -623,7 +623,7 @@ footer {
       color: #fff9e5; }
     footer div.coinfo h3 {
       font-size: 1.5rem;
-      padding: .5rem 0 0 0.5rem; }
+      padding: 1.5rem 0 0 0.5rem; }
     footer div.coinfo ul {
       padding-left: 1rem; }
     @media (min-width: 45em) {
@@ -634,11 +634,11 @@ footer {
       footer div.coinfo div.address {
         float: right;
         width: 66.66%;
-        padding-left: 1rem; } }
+        padding: 1.5rem 0 0 1rem; } }
     footer div.coinfo div.address iframe {
       min-width: 100%;
       height: 100%;
-      max-height: 22rem; }
+      min-height: 25rem; }
   footer section.widget_nav_menu ul {
     font-family: 'Oswald';
     font-size: 1.125rem;
