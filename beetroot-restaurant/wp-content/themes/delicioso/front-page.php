@@ -35,7 +35,7 @@
 	//custom query to fetch three pages as quick links by their post id#
 	$quicklink_query = new WP_Query( array(
 		'post_type' => 'page',
-		'post__in' => array( 701,703,1719 )
+		'post__in' => array( 1787,1802,1719 )
 	));
 	//custom loop
 	if($quicklink_query->have_posts()){ ?>
@@ -74,8 +74,8 @@
 <main class="content">
 	<div class="main container">
 		<?php menu_feed(); ?>
-		<?php blog_feed(); ?>
-	</div>
+<!-- 		<?php blog_feed(); ?>
+ -->	</div>
 </main> <!-- end #content -->
 <?php get_footer(); //include footer.php ?>
 

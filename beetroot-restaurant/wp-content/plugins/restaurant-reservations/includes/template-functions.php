@@ -103,7 +103,7 @@ function rtb_print_booking_form() {
 		<?php
 			$button = sprintf(
 				'<button class="button" type="submit">%s</button>',
-				apply_filters( 'rtb_booking_form_submit_label', __( 'Request Booking', 'restaurant-reservations' ) )
+				apply_filters( 'rtb_booking_form_submit_label', __( 'Reserva la Mesa', 'restaurant-reservations' ) )
 			);
 
 			echo apply_filters( 'rtb_booking_form_submit_button', $button );
@@ -252,7 +252,7 @@ function rtb_print_form_text_field( $slug, $title, $value, $args = array() ) {
 		<?php echo rtb_print_form_error( $slug ); ?>
 		<label for="rtb-<?php echo $slug; ?>">
 			<input type="<?php echo $type; ?>"  type="<?php echo $type; ?>" placeholder="<?php echo $title; ?>" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="<?php echo $value; ?>">
-			<span><?php echo $title; ?></span>
+			<span class="inputtip"><?php echo $title; ?></span>
 		</label>
 	</div>
 
@@ -279,7 +279,8 @@ function rtb_print_form_textarea_field( $slug, $title, $value, $args = array() )
 	<div <?php echo rtb_print_element_class( $slug, $classes ); ?>>
 		<?php echo rtb_print_form_error( $slug ); ?>
 		<label for="rtb-<?php echo $slug; ?>">
-		<textarea name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>"><?php echo $value; ?></textarea>
+		<textarea placeholder="<?php echo $title; ?>" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>"><?php echo $value; ?></textarea>
+		<span class="inputtip"><?php echo $title; ?></span>
 		</label>
 	</div>
 

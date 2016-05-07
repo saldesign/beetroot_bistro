@@ -266,6 +266,27 @@ header nav[role=navigation] ul.nav li:last-child a {
   header nav[role=navigation] ul.nav li:last-child a:after {
     height: 0; }
 
+/*   section.cta{
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    height: 2rem;
+    background-color:$green;
+    font-size: $baseSize;
+    line-height: $baseLineHeight;
+    a:first-child{
+      float: left;
+      color: $tan;
+    }
+    a h3{
+      font-size: $baseSize;
+      line-height: $baseLineHeight + .5rem;
+      color:$tan;
+      float: right;
+    } 
+
+  }*/
 /*
 ==headerBanner
 */
@@ -335,7 +356,7 @@ nav.quicklinks-container {
     color: #e6b217; }
 
 ul.quicklinks li {
-  max-width: 30rem;
+  max-width: 35rem;
   margin: 0 auto 1rem; }
   ul.quicklinks li div {
     height: 100%;
@@ -373,27 +394,35 @@ div.booking.container {
 /*
 ==Forms
 */
-form div.rtb-text.date,
-form.mc4wp-form div.rtb-text.date {
-  float: left;
-  width: 50%;
-  padding-right: 1rem; }
-form div.rtb-text.time,
-form.mc4wp-form div.rtb-text.time {
-  float: right;
-  width: 50%;
-  padding-left: 1rem; }
-form div.rtb-text.date,
-form.mc4wp-form div.rtb-text.date {
-  float: left;
-  width: 50%;
-  padding-right: 1rem; }
+@media (min-width: 45em) {
+  form div.rtb-text.date,
+  form.mc4wp-form div.rtb-text.date {
+    float: left;
+    width: 50%;
+    padding-right: 1rem; } }
+@media (min-width: 45em) {
+  form div.rtb-text.time,
+  form.mc4wp-form div.rtb-text.time {
+    float: right;
+    width: 50%;
+    padding-left: 1rem; } }
+form div.rtb-select,
+form.mc4wp-form div.rtb-select {
+  clear: both;
+  margin-bottom: 1rem; }
+form legend,
+form.mc4wp-form legend {
+  color: #42a685;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: .5rem 0 0 .25rem; }
 form label,
 form.mc4wp-form label {
   position: relative;
   display: block; }
-  form label input,
-  form.mc4wp-form label input {
+  form label input, form label textarea#rtb-messagew,
+  form.mc4wp-form label input,
+  form.mc4wp-form label textarea#rtb-messagew {
     font: 18px Helvetica, Arial, sans-serif;
     box-sizing: border-box;
     display: block;
@@ -404,23 +433,24 @@ form.mc4wp-form label {
     font-size: 18px;
     outline: none;
     transition: all 0.2s ease-in-out; }
-    form label input::placeholder,
-    form.mc4wp-form label input::placeholder {
+    form label input::placeholder, form label textarea#rtb-messagew::placeholder,
+    form.mc4wp-form label input::placeholder,
+    form.mc4wp-form label textarea#rtb-messagew::placeholder {
       transition: all 0.2s ease-in-out;
       color: #999;
       font: 18px Helvetica, Arial, sans-serif; }
-    form label input:focus, form label input.populated,
+    form label input:focus, form label input.populated, form label textarea#rtb-messagew:focus, form label textarea#rtb-messagew.populated,
     form.mc4wp-form label input:focus,
-    form.mc4wp-form label input.populated {
+    form.mc4wp-form label input.populated,
+    form.mc4wp-form label textarea#rtb-messagew:focus,
+    form.mc4wp-form label textarea#rtb-messagew.populated {
       padding-top: 28px;
       padding-bottom: 12px; }
-      form label input:focus::placeholder, form label input.populated::placeholder,
-      form.mc4wp-form label input:focus::placeholder,
-      form.mc4wp-form label input.populated::placeholder {
-        color: transparent; }
-      form label input:focus + span, form label input.populated + span,
+      form label input:focus + span, form label input.populated + span, form label textarea#rtb-messagew:focus + span, form label textarea#rtb-messagew.populated + span,
       form.mc4wp-form label input:focus + span,
-      form.mc4wp-form label input.populated + span {
+      form.mc4wp-form label input.populated + span,
+      form.mc4wp-form label textarea#rtb-messagew:focus + span,
+      form.mc4wp-form label textarea#rtb-messagew.populated + span {
         opacity: 1;
         top: 10px; }
   form label span,
@@ -432,6 +462,14 @@ form.mc4wp-form label {
     left: 20px;
     opacity: 0;
     transition: all 0.2s ease-in-out; }
+form div.date input.populated,
+form.mc4wp-form div.date input.populated {
+  padding-top: 28px;
+  padding-bottom: 12px; }
+form div.date span.inputtip,
+form.mc4wp-form div.date span.inputtip {
+  opacity: 1;
+  top: 10px; }
 form input[type="submit"],
 form.mc4wp-form input[type="submit"] {
   transition: all 0.2s ease-in-out;
@@ -443,6 +481,13 @@ form.mc4wp-form input[type="submit"] {
   form input[type="submit"]:hover,
   form.mc4wp-form input[type="submit"]:hover {
     background: #109f67; }
+
+div.time label input#rtb-time {
+  padding-top: 28px;
+  padding-bottom: 12px; }
+div.time label span.inputtip {
+  opacity: 1;
+  top: 10px; }
 
 /*
 ==MainContent
@@ -456,10 +501,6 @@ main.content div.main.container {
   main.content section.blog-feed {
     float: right;
     width: 33.33%; } }
-@media (min-width: 45em) {
-  main.content section.menu-feed {
-    float: left;
-    width: 66.66%; } }
 
 main .hentry {
   margin-bottom: 3rem; }
@@ -534,18 +575,29 @@ footer {
     background-color: #42a685; }
     footer div.newsletter h2, footer div.newsletter h3, footer div.newsletter p {
       color: #fff9e5; }
-  footer div.contact {
+  footer div.coinfo {
     background-color: #4d4536;
     color: #fff9e5; }
-    footer div.contact div {
-      padding: .75rem 0; }
-    footer div.contact h2, footer div.contact h3, footer div.contact p, footer div.contact li {
+    footer div.coinfo h2, footer div.coinfo h3, footer div.coinfo p, footer div.coinfo li {
       color: #fff9e5; }
-    footer div.contact h3 {
+    footer div.coinfo h3 {
       font-size: 1.5rem;
+      padding: .5rem 0 0 0.5rem; }
+    footer div.coinfo ul {
       padding-left: 1rem; }
-    footer div.contact ul {
-      padding-left: 1.5rem; }
+    @media (min-width: 45em) {
+      footer div.coinfo div.contact {
+        float: left;
+        width: 33.33%; } }
+    @media (min-width: 45em) {
+      footer div.coinfo div.address {
+        float: right;
+        width: 66.66%;
+        padding-left: 1rem; } }
+    footer div.coinfo div.address iframe {
+      min-width: 100%;
+      height: 100%;
+      max-height: 22rem; }
   footer section.widget_nav_menu ul {
     font-family: 'Oswald';
     font-size: 1.125rem;

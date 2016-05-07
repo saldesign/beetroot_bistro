@@ -51,6 +51,10 @@
 						));
 				 ?>
 			</nav>
+<!-- 			<section class="cta">
+				<a href="#close" class="icon-cancel"></a>
+				<a href="https://sindelantal.mx/guadalajara/" target="new"><h3>Pide a Domicilio<h3></a>
+			</section> -->
 		</header>
 
 
