@@ -61,6 +61,7 @@ $taxonomy = 'menuitemcat'; ?>
         <?php
             while( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
     <article class="cf">
+        <div class="thumb"><?php the_post_thumbnail(); ?></div>
         <div class="content cf">
             <div>
                 <h3><?php the_title(); ?></h3>
@@ -73,7 +74,6 @@ $taxonomy = 'menuitemcat'; ?>
             <span class="price"><?php echo $price; ?></span>
             <?php } //end if price ?>
         </div>
-        <div class="thumb"><?php the_post_thumbnail(); ?></div>
     </article>
 
     <?php 

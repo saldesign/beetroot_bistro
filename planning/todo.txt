@@ -1,16 +1,24 @@
 
 
 >>> To Do:
-Fixed Order Delivery Bar or button / Remove Newsletter Bar
-Remove Blog feed from front page
+
+theme check
+  comments.php
+  functions
+    if ( ! isset( $content_width ) ) $content_width = 900;
+
+Privlidges
+Reserve Party input
+Social Nav
 Remove Archive links: Menu Categories
 CSS
-	On Page Nav - Footer/Header
 	About 
-Enqueue CSS
+
+
 Meta Boxes
 Client Input for Quicklinks
 Events turn on
+Blog turn on
 JQ Menu - Fix Script, Add Burger Expand
 Sticky Nav
 Sticky Back to top 

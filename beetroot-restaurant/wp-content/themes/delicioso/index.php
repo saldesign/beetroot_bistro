@@ -23,6 +23,7 @@
 					//otherwise show the short content (excerpt)
 					if(is_singular() OR has_post_format('video')){
 						the_content();
+						wp_link_pages();
 					}else{
 						the_excerpt();
 					}

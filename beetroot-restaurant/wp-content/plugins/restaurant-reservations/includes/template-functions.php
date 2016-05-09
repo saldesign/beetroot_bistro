@@ -251,7 +251,7 @@ function rtb_print_form_text_field( $slug, $title, $value, $args = array() ) {
 	<div <?php echo rtb_print_element_class( $slug, $classes ); ?>>
 		<?php echo rtb_print_form_error( $slug ); ?>
 		<label for="rtb-<?php echo $slug; ?>">
-			<input type="<?php echo $type; ?>"  type="<?php echo $type; ?>" placeholder="<?php echo $title; ?>" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="<?php echo $value; ?>">
+			<input type="<?php echo $type; ?>"  placeholder="<?php echo $title; ?>" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="<?php echo $value; ?>">
 			<span class="inputtip"><?php echo $title; ?></span>
 		</label>
 	</div>

@@ -64,11 +64,11 @@ $basePadding:1rem;
 */
 
 @mixin transition($duration){
-  -webkit-transition: all $duration ease-out;
-  -moz-transition: all $duration ease-out;
-  -ms-transition: all $duration ease-out;
-  -o-transition: all $duration ease-out;
-  transition: all $duration ease-out; 
+  -webkit-transition: all $duration ease-in-out;
+  -moz-transition: all $duration ease-in-out;
+  -ms-transition: all $duration ease-in-out;
+  -o-transition: all $duration ease-in-out;
+  transition: all $duration ease-in-out; 
 }
 @mixin box-sizing($box-model) {
   -webkit-box-sizing: $box-model; // Safari <= 5
@@ -137,7 +137,7 @@ body {
   position: relative;
   font-family: $fontstack;
   font-size: 100%;
-  @include box-sizing(border-box);
+  @include transition(6000ms);
 }
   
   h2,h3,h4,h5,h6{
@@ -226,15 +226,17 @@ header[role=banner] {
   background-color:$lighttan;
 }
   nav.main-nav{
-    @include MWcenter;
+    max-width: 62rem;
+    padding: 0 0.75rem 0 0;
+    margin: 0 auto;
   }
   h1.logo {
     width: 60%;
-    min-width: 12.1rem;
+    min-width: 12rem;
     float: left; 
 
     @include breakpoint(medium){
-      width:30%;
+      width:26%;
     }
   }
       h1.logo a {
@@ -243,7 +245,7 @@ header[role=banner] {
         text-indent: -300%; 
       }
         h1.logo span {
-          background: url("images/logo.png") no-repeat 0.375rem center;
+          background: url("images/logo.png") no-repeat 1rem center;
           background-size: 10.8125rem 2.8125rem;
           display: block;
           width: 100%;
@@ -255,7 +257,7 @@ header[role=banner] {
     font-size: 2rem;
     height: 3.75rem;
     line-height: 3.75rem;
-    padding: 1rem 3.5rem 0 0;
+    padding: 0.25rem 3.5rem 0 0;
     width: 3rem;
     text-align: center;
 
@@ -304,7 +306,7 @@ header[role=banner] {
           padding:.5rem 1rem;
         @include transition(600ms);
         @include breakpoint(medium){
-          padding:0 .5rem;
+          padding:0 .25rem;
           margin:0 .25rem;
         }
       
@@ -528,7 +530,7 @@ form.mc4wp-form {
     position: relative;
     display: block;
     
-    input, textarea#rtb-messagew {
+    input, textarea#rtb-message {
       font: 18px Helvetica, Arial, sans-serif;
       box-sizing: border-box;
       display: block;
@@ -687,15 +689,15 @@ body.page-template-template-menuitem main{
     margin-bottom: 0.5rem;
   }
   article {
-    > div{
+    div.content{
       @include breakpoint(small){
         max-width: 35rem;
         margin:0 auto;
       }
       @include breakpoint(medium){
-        float: right;
-        width: 66.66%;
-        padding-left:1rem;
+        float: left;
+        width: 75%;
+        padding-left: 1rem;
       }
       > div{
         width: 90%;
@@ -709,14 +711,18 @@ body.page-template-template-menuitem main{
         color: $green;
         font-family: 'Oswald';
         font-size: $headingSize - .25rem;
+        line-height: 3rem;
+
       }
     }
     div.thumb{
-      max-width: 25rem;
+      max-width: 7rem;
       margin:0 auto;
       @include breakpoint(medium){
         float: left;
-        width: 33.33%;
+        width: 25%;
+        max-width: 15rem;
+
       }
     }
   }
@@ -788,6 +794,7 @@ footer{
         min-width: 100%;
         height:  100%;
         min-height: 25rem;
+        border:none;
       }
     }
 
@@ -802,6 +809,122 @@ footer{
   }
 }
 
+/* 
+=WordPress Core
+*/
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+.sticky{
+  font-family: $fontstack;
+}
+.gallery-caption{
+  font-family: $fontstack;
+}
+.bypostauthor{
+  font-family: $fontstack;
+}
 
 
 

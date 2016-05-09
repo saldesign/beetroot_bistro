@@ -61,9 +61,11 @@ body {
   position: relative;
   font-family: "Hind", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-size: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  -webkit-transition: all 6000ms ease-in-out;
+  -moz-transition: all 6000ms ease-in-out;
+  -ms-transition: all 6000ms ease-in-out;
+  -o-transition: all 6000ms ease-in-out;
+  transition: all 6000ms ease-in-out; }
 
 h2, h3, h4, h5, h6 {
   text-transform: uppercase;
@@ -82,11 +84,11 @@ a:link
 a:visited {
   color: #42a685;
   text-decoration: none;
-  -webkit-transition: all 500ms ease-out;
-  -moz-transition: all 500ms ease-out;
-  -ms-transition: all 500ms ease-out;
-  -o-transition: all 500ms ease-out;
-  transition: all 500ms ease-out; }
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out; }
 
 a:hover,
 a:focus,
@@ -115,11 +117,11 @@ header a.menu-link:focus {
     color: #fff9e5;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.6);
     text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
-    -webkit-transition: all 500ms ease-out;
-    -moz-transition: all 500ms ease-out;
-    -ms-transition: all 500ms ease-out;
-    -o-transition: all 500ms ease-out;
-    transition: all 500ms ease-out; }
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out; }
 
 h2 .button,
 h2 #button {
@@ -148,17 +150,17 @@ header[role=banner] {
   background-color: #fffdf7; }
 
 nav.main-nav {
-  max-width: 60rem;
-  margin-left: auto;
-  margin-right: auto; }
+  max-width: 62rem;
+  padding: 0 0.75rem 0 0;
+  margin: 0 auto; }
 
 h1.logo {
   width: 60%;
-  min-width: 12.1rem;
+  min-width: 12rem;
   float: left; }
   @media (min-width: 45em) {
     h1.logo {
-      width: 30%; } }
+      width: 26%; } }
 
 h1.logo a {
   width: 100%;
@@ -166,7 +168,7 @@ h1.logo a {
   text-indent: -300%; }
 
 h1.logo span {
-  background: url("images/logo.png") no-repeat 0.375rem center;
+  background: url("images/logo.png") no-repeat 1rem center;
   background-size: 10.8125rem 2.8125rem;
   display: block;
   width: 100%;
@@ -177,7 +179,7 @@ header a.menu-link {
   font-size: 2rem;
   height: 3.75rem;
   line-height: 3.75rem;
-  padding: 1rem 3.5rem 0 0;
+  padding: 0.25rem 3.5rem 0 0;
   width: 3rem;
   text-align: center; }
   @media (min-width: 45em) {
@@ -219,14 +221,14 @@ header nav[role=navigation].active ul.nav {
 header nav[role=navigation] ul.nav a {
   display: inline-block;
   padding: .5rem 1rem;
-  -webkit-transition: all 600ms ease-out;
-  -moz-transition: all 600ms ease-out;
-  -ms-transition: all 600ms ease-out;
-  -o-transition: all 600ms ease-out;
-  transition: all 600ms ease-out; }
+  -webkit-transition: all 600ms ease-in-out;
+  -moz-transition: all 600ms ease-in-out;
+  -ms-transition: all 600ms ease-in-out;
+  -o-transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out; }
   @media (min-width: 45em) {
     header nav[role=navigation] ul.nav a {
-      padding: 0 .5rem;
+      padding: 0 .25rem;
       margin: 0 .25rem; } }
   header nav[role=navigation] ul.nav a:after {
     content: "";
@@ -237,22 +239,22 @@ header nav[role=navigation] ul.nav a {
   header nav[role=navigation] ul.nav a:hover:after {
     background-color: #e6b217;
     width: 60%;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    transition: all 300ms ease-out; }
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out; }
 
 header nav[role=navigation] ul.nav li.current_page_item a {
   color: #e6b217; }
   header nav[role=navigation] ul.nav li.current_page_item a:after {
     background-color: #e6b217;
     width: 60%;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    transition: all 300ms ease-out; }
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out; }
 
 header nav[role=navigation] ul.nav li:last-child a {
   color: white;
@@ -271,11 +273,11 @@ header nav[role=navigation] ul.nav li:last-child a {
     border: 2px solid #42a685;
     background-color: #fff9e5;
     color: #42a685;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    transition: all 300ms ease-out; }
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out; }
   header nav[role=navigation] ul.nav li:last-child a:after {
     height: 0; }
 
@@ -356,11 +358,11 @@ nav.quicklinks-container {
   nav.quicklinks-container a p {
     color: #fff9e5;
     margin-top: -2rem;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    transition: all 300ms ease-out; }
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out; }
   nav.quicklinks-container ul {
     max-width: 60rem;
     margin-left: auto;
@@ -433,9 +435,9 @@ form label,
 form.mc4wp-form label {
   position: relative;
   display: block; }
-  form label input, form label textarea#rtb-messagew,
+  form label input, form label textarea#rtb-message,
   form.mc4wp-form label input,
-  form.mc4wp-form label textarea#rtb-messagew {
+  form.mc4wp-form label textarea#rtb-message {
     font: 18px Helvetica, Arial, sans-serif;
     box-sizing: border-box;
     display: block;
@@ -446,24 +448,24 @@ form.mc4wp-form label {
     font-size: 18px;
     outline: none;
     transition: all 0.2s ease-in-out; }
-    form label input::placeholder, form label textarea#rtb-messagew::placeholder,
+    form label input::placeholder, form label textarea#rtb-message::placeholder,
     form.mc4wp-form label input::placeholder,
-    form.mc4wp-form label textarea#rtb-messagew::placeholder {
+    form.mc4wp-form label textarea#rtb-message::placeholder {
       transition: all 0.2s ease-in-out;
       color: #999;
       font: 18px Helvetica, Arial, sans-serif; }
-    form label input:focus, form label input.populated, form label textarea#rtb-messagew:focus, form label textarea#rtb-messagew.populated,
+    form label input:focus, form label input.populated, form label textarea#rtb-message:focus, form label textarea#rtb-message.populated,
     form.mc4wp-form label input:focus,
     form.mc4wp-form label input.populated,
-    form.mc4wp-form label textarea#rtb-messagew:focus,
-    form.mc4wp-form label textarea#rtb-messagew.populated {
+    form.mc4wp-form label textarea#rtb-message:focus,
+    form.mc4wp-form label textarea#rtb-message.populated {
       padding-top: 28px;
       padding-bottom: 12px; }
-      form label input:focus + span, form label input.populated + span, form label textarea#rtb-messagew:focus + span, form label textarea#rtb-messagew.populated + span,
+      form label input:focus + span, form label input.populated + span, form label textarea#rtb-message:focus + span, form label textarea#rtb-message.populated + span,
       form.mc4wp-form label input:focus + span,
       form.mc4wp-form label input.populated + span,
-      form.mc4wp-form label textarea#rtb-messagew:focus + span,
-      form.mc4wp-form label textarea#rtb-messagew.populated + span {
+      form.mc4wp-form label textarea#rtb-message:focus + span,
+      form.mc4wp-form label textarea#rtb-message.populated + span {
         opacity: 1;
         top: 10px; }
   form label span,
@@ -558,31 +560,33 @@ body.page-template-template-menuitem main h3 {
 body.page-template-template-menuitem main p {
   margin-bottom: 0.5rem; }
 @media (max-width: 44.999em) {
-  body.page-template-template-menuitem main article > div {
+  body.page-template-template-menuitem main article div.content {
     max-width: 35rem;
     margin: 0 auto; } }
 @media (min-width: 45em) {
-  body.page-template-template-menuitem main article > div {
-    float: right;
-    width: 66.66%;
+  body.page-template-template-menuitem main article div.content {
+    float: left;
+    width: 75%;
     padding-left: 1rem; } }
-body.page-template-template-menuitem main article > div > div {
+body.page-template-template-menuitem main article div.content > div {
   width: 90%;
   float: left;
   max-width: 25rem; }
-body.page-template-template-menuitem main article > div span.price {
+body.page-template-template-menuitem main article div.content span.price {
   float: right;
   text-align: right;
   color: #42a685;
   font-family: 'Oswald';
-  font-size: 1.75rem; }
+  font-size: 1.75rem;
+  line-height: 3rem; }
 body.page-template-template-menuitem main article div.thumb {
-  max-width: 25rem;
+  max-width: 7rem;
   margin: 0 auto; }
   @media (min-width: 45em) {
     body.page-template-template-menuitem main article div.thumb {
       float: left;
-      width: 33.33%; } }
+      width: 25%;
+      max-width: 15rem; } }
 
 /*
 ==Sidebar
@@ -638,7 +642,8 @@ footer {
     footer div.coinfo div.address iframe {
       min-width: 100%;
       height: 100%;
-      min-height: 25rem; }
+      min-height: 25rem;
+      border: none; }
   footer section.widget_nav_menu ul {
     font-family: 'Oswald';
     font-size: 1.125rem;
@@ -646,6 +651,109 @@ footer {
     text-transform: uppercase;
     letter-spacing: .125rem;
     padding-left: 1rem; }
+
+/* 
+=WordPress Core
+*/
+.alignnone {
+  margin: 5px 20px 20px 0; }
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto; }
+
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+a img.alignnone {
+  margin: 5px 20px 20px 0; }
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center; }
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0; }
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0; }
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px; }
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto; }
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px; }
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
+.sticky {
+  font-family: "Hind", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; }
+
+.gallery-caption {
+  font-family: "Hind", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; }
+
+.bypostauthor {
+  font-family: "Hind", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; }
 
 /*
 ==Media Queries

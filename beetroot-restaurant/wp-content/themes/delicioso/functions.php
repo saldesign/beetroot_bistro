@@ -295,20 +295,38 @@ endif;
 
 
 
+
+
+
 add_action('wp_enqueue_scripts', 'delicioso_scripts');
 function delicioso_scripts(){
 	//attach jq
 	wp_enqueue_script('jquery' );
+
 	//attach script.js
 	$js_url =  get_stylesheet_directory_uri().'/js/script.js';
 	//								handle 			 url 		dependancies     ver 	in footer
 	wp_enqueue_script('delicioso_js', $js_url, array('jquery'));
+	
 	//attach html5.js
 	$html5_url =  get_stylesheet_directory_uri().'/js/html5.js';
 	//								handle 			 url 		dependancies     ver 	in footer
 	wp_enqueue_script('html5', $html5_url);
+
+	//attach reset.css
+	$reset_url = get_stylesheet_directory_uri().'/styles/reset.css';
+	wp_enqueue_style('reset', $reset_url );
+
+	//attach beetroot.css
+	$icons_url = get_stylesheet_directory_uri().'/styles/beetroot.css';
+	wp_enqueue_style('icons', $icons_url );
+
+	//attach style.css
+	$style_url = get_stylesheet_uri();
+	wp_enqueue_style('main_style', $style_url );
+
 }
 
 
-
+if ( ! isset( $content_width ) ) $content_width = 900;
 //No Close PHP!

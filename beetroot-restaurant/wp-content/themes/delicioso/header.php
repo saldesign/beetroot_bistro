@@ -4,13 +4,10 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="initial-scale=1.0" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/styles/reset.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/styles/beetroot.css" />
 	<?php 
 	//Necessary in <head> for JS and plugins to work. 
 	//Before style.css loads so the theme stylesheet is more specific than all others.
 	wp_head();  ?>
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<?php
 
 	if (has_post_thumbnail()) { //if a thumbnail has been set
@@ -37,7 +34,7 @@
 	<div class="wrapper">
 		<header role="banner" class="cf">
 			<!-- TO DO: Custom Logo Display -->
-			<nav role="navigation" class="main-nav">
+			<nav role="navigation" class="main-nav cf">
 				<h1 class="logo">
 					<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" rel="home">
 						<span><?php bloginfo('name'); ?></span>
