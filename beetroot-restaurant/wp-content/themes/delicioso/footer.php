@@ -17,7 +17,7 @@
 
 				<h3>Email</h3>
 				<ul>
-					<li><a href="mailto:beetrootrestaurant@gmail.com">BeetrootRestaurant@gmail.com</a></li>
+					<li><a href="mailto:Beetrootgdl@yahoo.com">Beetrootgdl@yahoo.com</a></li>
 				</ul>
 
 				<h3>Address</h3>
