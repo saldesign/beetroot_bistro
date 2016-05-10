@@ -131,4 +131,37 @@ pass
 
 
 
+>>> Final
+
+Permalinks - every piece of content has a permalink, posts, pages, authors, tags, author
+	- When permalinks is changed modify .htaccess 
+	- 301 redirect for permanently moved files
+
+White screen of death - Fatal Error, debug mode to true on wp-config.php
+
+Moving WP
+	-	FTP Files
+	-	Make empty DB/User
+	-	Migrate DB Plugin
+	-	import DB
+
+Inlcude Tags
+	-	get_template_part
+	-	comments_template
+
+Functions.php
+	-	no close, any trailing space will break it
+
+Plugins or Functions
+	-	Functions - look & feel
+	-	Content related
+
+Options Table 
+	-	register_settings
+
+	Sanitize Options
+		-	wp_kses - 
+
+add_image_size
+
 

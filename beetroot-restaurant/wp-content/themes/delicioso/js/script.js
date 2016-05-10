@@ -27,9 +27,19 @@ jQuery(document).ready(function($) {
       }
     });
     
+
     setTimeout(function() {
       $('#fname').trigger('focus');
     }, 500);
+
+    $(window).scroll(function(){
+      var winTop = $(window).scrollTop();
+      if(winTop >= 60){
+        $("header.main").addClass("sticky-header");
+      }else{
+        $("header.main").removeClass("sticky-header");
+      }//if-else
+    });//win func.
 });//End document.ready 
 
 

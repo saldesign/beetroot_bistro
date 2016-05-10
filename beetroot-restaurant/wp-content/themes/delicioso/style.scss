@@ -54,7 +54,7 @@ $basePadding:1rem;
  * Include this rule to trigger hasLayout and contain floats.
  */
 .cf {
-    *zoom: 1;
+    zoom: 1;
 }
 
 
@@ -220,11 +220,22 @@ div.wrapper{
 ==Header
 */
 
-header[role=banner] {
+header.main[role=banner] {
   height: 3.75rem;
   border-bottom: solid 2px rgba($darkgreen, .3);
-  background-color:$lighttan;
+  background-color:rgba($lighttan, .9);
 }
+  .sticky-header{
+    background-color:rgba($lighttan, .3);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    @include transition(5000ms);
+  }
+
+
   nav.main-nav{
     max-width: 62rem;
     padding: 0 0.75rem 0 0;
@@ -340,6 +351,7 @@ header[role=banner] {
           border: solid 2px transparent;
           padding-bottom: 0;
           padding-top: .125rem;
+          margin-top: .5rem;
           @include border-radius(.25rem);
           @include breakpoint(medium){
             margin-top: -0.25rem;
@@ -933,13 +945,13 @@ a img.aligncenter {
 */
 
 @media screen and (max-width:675px) {
-    #wpadminbar {
-        display:none;
-    }
-    html {
-        position:relative;
-        top:-46px;
-    }
+    // #wpadminbar {
+    //     display:none;
+    // }
+    // html {
+    //     position:relative;
+    //     top:-46px;
+    // }
 }
 
 

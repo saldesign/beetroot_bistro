@@ -32,7 +32,7 @@
 </head>
 <body <?php body_class(); ?>>	
 	<div class="wrapper">
-		<header role="banner" class="cf">
+		<header role="banner" class="main cf">
 			<!-- TO DO: Custom Logo Display -->
 			<nav role="navigation" class="main-nav cf">
 				<h1 class="logo">
