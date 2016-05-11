@@ -573,34 +573,37 @@ body.page-template-template-menuitem main h3 {
   margin-bottom: .5rem; }
 body.page-template-template-menuitem main p {
   margin-bottom: 0.5rem; }
-@media (max-width: 44.999em) {
-  body.page-template-template-menuitem main article div.content {
-    max-width: 35rem;
-    margin: 0 auto; } }
-@media (min-width: 45em) {
-  body.page-template-template-menuitem main article div.content {
-    float: left;
-    width: 75%;
-    padding-left: 1rem; } }
-body.page-template-template-menuitem main article div.content > div {
-  width: 90%;
-  float: left;
-  max-width: 25rem; }
-body.page-template-template-menuitem main article div.content span.price {
-  float: right;
-  text-align: right;
-  color: #42a685;
-  font-family: 'Oswald';
-  font-size: 1.75rem;
-  line-height: 3rem; }
-body.page-template-template-menuitem main article div.thumb {
-  max-width: 7rem;
-  margin: 0 auto; }
+body.page-template-template-menuitem main article {
+  margin-bottom: 1.5rem; }
+  @media (max-width: 44.999em) {
+    body.page-template-template-menuitem main article div.content {
+      max-width: 35rem;
+      margin: 0 auto; } }
   @media (min-width: 45em) {
-    body.page-template-template-menuitem main article div.thumb {
+    body.page-template-template-menuitem main article div.content {
       float: left;
-      width: 25%;
-      max-width: 15rem; } }
+      width: 75%;
+      padding-left: 1rem; } }
+  body.page-template-template-menuitem main article div.content > div {
+    width: 90%;
+    float: left;
+    max-width: 25rem; }
+  body.page-template-template-menuitem main article div.content span.price {
+    float: right;
+    text-align: right;
+    color: #42a685;
+    font-family: 'Oswald';
+    font-size: 1.75rem;
+    line-height: 3rem; }
+  body.page-template-template-menuitem main article div.thumb {
+    max-width: 7rem;
+    min-height: 1rem;
+    margin: 0 auto; }
+    @media (min-width: 45em) {
+      body.page-template-template-menuitem main article div.thumb {
+        float: left;
+        width: 25%;
+        max-width: 15rem; } }
 
 /*
 ==Sidebar

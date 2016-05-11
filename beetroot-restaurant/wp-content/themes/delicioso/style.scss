@@ -701,6 +701,7 @@ body.page-template-template-menuitem main{
     margin-bottom: 0.5rem;
   }
   article {
+    margin-bottom: 1.5rem;
     div.content{
       @include breakpoint(small){
         max-width: 35rem;
@@ -729,6 +730,7 @@ body.page-template-template-menuitem main{
     }
     div.thumb{
       max-width: 7rem;
+      min-height: 1rem;
       margin:0 auto;
       @include breakpoint(medium){
         float: left;

@@ -2,14 +2,13 @@
 
 >>> To Do:
 
-theme check
-  comments.php
-  functions
-    if ( ! isset( $content_width ) ) $content_width = 900;
 
+Caching
+Z-index menu
 Privlidges
 Reserve Party input
 Social Nav
+Customization for footer
 Remove Archive links: Menu Categories
 CSS
 	About 

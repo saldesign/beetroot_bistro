@@ -18,15 +18,26 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
+// ** MySQL settings - You can get this info from your web host ** 
+//check to see if we are viewing local or live site
+if( $_SERVER['HTTP_HOST'] == 'localhost'){
+	define('DB_NAME', 'beetroot');
+	define('DB_USER', 'christian');
+	define('DB_PASSWORD', 'RzqYUDfUMGfERrzC');
+}else{
+	define('DB_NAME', 'climbing_beetroot');
+	define('DB_USER', 'climbing_chris');
+	define('DB_PASSWORD', 'lwzQ.vbL]+vN');
+}
+
 /** The name of the database for WordPress */
-define('DB_NAME', 'beetroot');
+// define('DB_NAME', 'beetroot');
 
 /** MySQL database username */
-define('DB_USER', 'christian');
+// define('DB_USER', 'christian');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'RzqYUDfUMGfERrzC');
+// define('DB_PASSWORD', 'RzqYUDfUMGfERrzC');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
