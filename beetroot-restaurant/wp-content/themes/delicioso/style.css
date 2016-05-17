@@ -147,7 +147,8 @@ div.wrapper {
 header.main[role=banner] {
   height: 3.75rem;
   border-bottom: solid 2px rgba(54, 77, 69, 0.3);
-  background-color: rgba(255, 253, 247, 0.9); }
+  background-color: rgba(255, 253, 247, 0.9);
+  z-index: 9999; }
 
 .sticky-header {
   background-color: rgba(255, 253, 247, 0.3);
@@ -321,10 +322,10 @@ header nav[role=navigation] ul.nav li:last-child a {
 */
 div.header-container {
   background-color: #e6d5a1;
-  padding: 1rem 1rem 6rem; }
+  padding: 1.5rem 1rem 6.5rem; }
   @media (min-width: 45em) {
     div.header-container {
-      padding-bottom: 1rem; } }
+      padding: 1.5rem 1rem; } }
 
 header.banner-header {
   position: relative;
@@ -361,14 +362,14 @@ header.banner-header article.hentry h2 {
 
 header.banner-header article.hentry div.entry-content {
   background-color: #42a685;
-  padding: 1rem 0.75rem 0.25rem; }
+  padding: 1rem .75rem .25rem; }
 
 /*
 ==Quicklinks
 */
 nav.quicklinks-container {
   background-color: #42a685;
-  padding: 1rem; }
+  padding: 1.5rem 1rem; }
   nav.quicklinks-container a p {
     color: #fff9e5;
     margin-top: -2rem;
@@ -385,8 +386,10 @@ nav.quicklinks-container {
     color: #e6b217; }
 
 ul.quicklinks li {
-  max-width: 35rem;
-  margin: 0 auto 1rem; }
+  max-width: 35rem; }
+  @media (max-width: 44.999em) {
+    ul.quicklinks li {
+      margin: 0 auto 1rem; } }
   ul.quicklinks li div {
     height: 100%;
     min-height: 12rem; }
@@ -413,7 +416,7 @@ ul.quicklinks li {
 ==Booking
 */
 div.booking.container {
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   background: url(images/pattern.png); }
   div.booking.container section {
     max-width: 60rem;
@@ -525,7 +528,7 @@ main.content div.main.container {
   max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem; }
+  padding: 1.5rem; }
 @media (min-width: 45em) {
   main.content section.blog-feed {
     float: right;
@@ -610,7 +613,7 @@ body.page-template-template-menuitem main article {
 */
 aside.sidebar {
   background-color: #fff9e5;
-  padding: 1rem; }
+  padding: 1.5rem 1rem; }
   @media (min-width: 45em) {
     aside.sidebar {
       float: right;
@@ -632,7 +635,7 @@ footer {
     max-width: 60rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem; }
+    padding: 1.5rem 1rem; }
   footer div.newsletter {
     background-color: #42a685; }
     footer div.newsletter h2, footer div.newsletter h3, footer div.newsletter p {

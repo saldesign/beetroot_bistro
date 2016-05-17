@@ -36,7 +36,7 @@
 
 
 			<div class="address">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1411.036465847515!2d-103.37281626653915!3d20.689219539621167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae3d17426109%3A0x26cf05a6eb68c71!2sAv.+Jes%C3%BAs+Garc%C3%ADa+1866%2C+Ladr%C3%B3n+de+Guevara%2C+Ladron+De+Guevara%2C+44600+Guadalajara%2C+Jal.%2C+Mexico!5e0!3m2!1sen!2sus!4v1462567729275" allowfullscreen></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.5157790276303!2d-103.37389648816634!3d20.6892699894581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae3d0f86998b%3A0x84c3277f8b9d94c7!2sBeetroot+Restaurant!5e0!3m2!1sen!2sus!4v1463161017995" allowfullscreen></iframe>
 
 			</div>
 

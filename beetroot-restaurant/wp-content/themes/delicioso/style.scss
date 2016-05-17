@@ -28,7 +28,7 @@ $brown: #4d4536;
 /*
 ==Layout
 */
-$basePadding:1rem;
+$basePadding:1.5rem;
 
 
 /*
@@ -76,8 +76,8 @@ $basePadding:1rem;
           box-sizing: $box-model;
 }
 @mixin MWcenter{
-  max-width: 60rem;
-  margin-left: auto;
+  max-width: 60rem; 
+ margin-left: auto;
   margin-right: auto;
 }
 @mixin center-block {
@@ -224,6 +224,7 @@ header.main[role=banner] {
   height: 3.75rem;
   border-bottom: solid 2px rgba($darkgreen, .3);
   background-color:rgba($lighttan, .9);
+  z-index: 9999;
 }
   .sticky-header{
     background-color:rgba($lighttan, .3);
@@ -393,10 +394,10 @@ header.main[role=banner] {
 */
 div.header-container{
   background-color:$darkTan;
-  padding: 1rem $basePadding 6rem;
+  padding:$basePadding 1rem 6.5rem;
 
   @include breakpoint(medium){
-    padding-bottom: $basePadding;
+    padding: $basePadding 1rem;
   }
 }
   header.banner-header{
@@ -438,7 +439,7 @@ div.header-container{
       }
       header.banner-header article.hentry div.entry-content{
         background-color:$green;
-        padding: $basePadding .75rem .25rem;
+        padding: 1rem .75rem .25rem;
       }
 
 
@@ -448,7 +449,7 @@ div.header-container{
 
 nav.quicklinks-container{
   background-color:$green;
-  padding:$basePadding;
+  padding:$basePadding 1rem;
   a p{
     color: $tan;
     margin-top: -2rem;
@@ -464,8 +465,9 @@ nav.quicklinks-container{
 }
   ul.quicklinks li{
     max-width: 35rem;
-    margin: 0 auto 1rem;
-
+    @include breakpoint(small){
+      margin: 0 auto 1rem;
+    }
     div {
       height: 100%;
       min-height: 12rem;
@@ -501,8 +503,8 @@ nav.quicklinks-container{
 ==Booking
 */
 div.booking.container {
-  padding:$basePadding;
-  background:url(images/pattern.png);
+    padding:$basePadding 1rem;
+    background:url(images/pattern.png);
   section{
     @include MWcenter;
   }
@@ -749,7 +751,7 @@ body.page-template-template-menuitem main{
 */
 aside.sidebar{
   background-color:$tan;
-  padding:$basePadding;
+  padding:$basePadding 1rem;
 
   @include breakpoint(medium){
     float: right;
@@ -775,7 +777,7 @@ footer{
   }
   section{
     @include MWcenter;
-    padding:$basePadding;
+    padding:$basePadding 1rem;
   }
   div.newsletter{
     background-color:$green;
